@@ -4,6 +4,11 @@
     <section>
         <div class="container">
             <h1 class="text-center mb-5">Lista dei Post</h1>
+            @if (session('delete'))
+                <div class="alert alert-success">
+                    {{ session('delete') }}
+                </div>
+            @endif
             <table class="table table-striped">
                 <thead>
                   <tr>
@@ -26,7 +31,11 @@
                             <a class="btn btn-primary" href="{{ route('admin.posts.edit', $post->id) }}">EDIT</a>
                           </td>
                           <td>
-                            <a class="btn btn-danger" href="">DELETE</a>
+                            <form action="{{ route('admin.posts.destroy', $post->id) }}" onsubmit="return confirm('Sei sicuro di voler eliminare il post \'{{ $post->title }}\'')" method="POST">
+                              @csrf
+                              @method('DELETE')
+                              <input type="submit" class="btn btn-danger" value="DELETE">
+                            </form>
                           </td>
                       </tr>
                   @endforeach
