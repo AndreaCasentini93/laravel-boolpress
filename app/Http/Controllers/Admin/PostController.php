@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 use App\Post;
 
 class PostController extends Controller
@@ -26,7 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.posts.create');
     }
 
     /**
@@ -37,7 +39,29 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->request->add(['slug' => Str::slug($request->title)]);
+        $data = $request->all();
+
+        $request->validate(
+            [
+                'title' => 'required|unique:posts',
+                'slug' => 'required',
+                'author' => 'required',
+                'category' => 'required',
+                'content' => 'required',
+            ],
+            [
+                'required' => 'Il campo è obbligatorio!',
+                'unique' => 'Questo titolo è già stato utilizzato'
+            ]
+        );
+        
+        $post = new Post();
+        $post->fill($data);
+        $post->save();
+        return redirect()
+            ->route('admin.posts.show', $post->id)
+            ->with('message', 'Il post "' . addslashes($post->title) . '" è stato salvato con successo!');
     }
 
     /**
@@ -57,9 +81,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**
@@ -69,9 +93,32 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
-        //
+        $request->request->add(['slug' => Str::slug($request->title)]);
+        $data = $request->all();
+
+        $request->validate(
+            [
+                'title' => [
+                    'required',
+                    Rule::unique('posts')->ignore($post->id)
+                ],
+                'slug' => 'required',
+                'author' => 'required',
+                'category' => 'required',
+                'content' => 'required',
+            ],
+            [
+                'required' => 'Il campo è obbligatorio!',
+                'unique' => 'Questo titolo è già stato utilizzato'
+            ]
+        );
+        
+        $post->update($data);
+        return redirect()
+            ->route('admin.posts.show', $post->id)
+            ->with('message', 'Il post "' . addslashes($post->title) . '" è stato modificato con successo!');
     }
 
     /**
