@@ -20,13 +20,13 @@
                           <td>{{ $post->title }}</td>
                           <td>{{ $post->slug }}</td>
                           <td>
-                            <a href="">SHOW</a>
+                            <a class="btn btn-success" href="{{ route('admin.posts.show', $post->id) }}">SHOW</a>
                           </td>
                           <td>
-                            <a href="">EDIT</a>
+                            <a class="btn btn-primary" href="">EDIT</a>
                           </td>
                           <td>
-                            <a href="">DELETE</a>
+                            <a class="btn btn-danger" href="">DELETE</a>
                           </td>
                       </tr>
                   @endforeach
