@@ -5,7 +5,7 @@
 @section('content')
     <section>
         <div class="container">
-            <h1 class="text-center mb-5">Lista dei Post</h1>
+            <h1 class="title text-center mb-5">Lista dei Post</h1>
             @if (session('delete'))
                 <div class="alert alert-success">
                     {{ session('delete') }}

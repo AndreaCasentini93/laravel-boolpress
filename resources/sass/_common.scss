@@ -1,3 +1,5 @@
+@import 'variables';
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -9,7 +11,14 @@ body {
 }
 
 main {
-    min-height: calc(100vh - $header-height);
+    min-height: calc(100vh - 77px);
+    margin-top: 77px;
+
+    &.pb-4, &.py-4 {
+        padding: 0 !important;
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
 }
 
 ul {
@@ -30,4 +39,40 @@ a {
     &:hover {
         color: unset;
     }
+}
+
+h1.title {
+    font-size: 50px;
+    font-weight: 500;
+    color: $base-color-2;
+
+    &.mb-5, &.my-5 {
+        margin-bottom: 30px !important;
+    }
+}
+
+strong {
+    color: $base-color-1;
+}
+
+label {
+    color: $base-color-1;
+}
+
+.table thead th {
+    color: $base-color-1;
+}
+
+small {
+    color: $special-red;
+}
+
+.alert-success {
+    color: $special-red !important;
+    background-color: unset !important;
+    border: unset !important;
+}
+
+.alert {
+    padding: 0 !important;
 }

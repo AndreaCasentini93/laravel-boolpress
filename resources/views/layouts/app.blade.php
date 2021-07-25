@@ -35,9 +35,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <!-- Left Side Of Navbar -->
                             <ul class="navbar-nav mr-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('home') }}" target="_blank">Sito online</a>
-                                </li>
+                                
                             </ul>
     
                             <!-- Right Side Of Navbar -->
@@ -54,10 +52,10 @@
                                     @endif
                                 @else
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('admin.posts.index') }}">Elenco Post</a>
+                                        <a class="nav-link" href="{{ route('admin.posts.index') }}">Elenco post</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('admin.posts.create') }}">Crea Post</a>
+                                        <a class="nav-link" href="{{ route('admin.posts.create') }}">Crea post</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -75,6 +73,9 @@
                                                 @csrf
                                             </form>
                                         </div>
+                                    </li>
+                                    <li class="nav-item d-flex align-items-center">
+                                        <a class="online_site nav-link" href="{{ route('home') }}" target="_blank">Sito Online</a>
                                     </li>
                                 @endguest
                             </ul>

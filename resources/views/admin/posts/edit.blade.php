@@ -5,7 +5,7 @@
 @section('content')
     <section>
         <div class="container">
-            <h1 class="text-center mb-5">Modifica Post</h1>
+            <h1 class="title text-center mb-5">Modifica Post</h1>
             <form action="{{ route('admin.posts.update', $post->id) }}" method="POST">
                 @csrf
                 @method('PATCH')
