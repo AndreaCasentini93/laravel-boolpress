@@ -44,15 +44,15 @@ class PostController extends Controller
 
         $request->validate(
             [
-                'title' => 'required|unique:posts',
-                'slug' => 'required',
+                'title' => 'required',
+                'slug' => 'required|unique:posts',
                 'author' => 'required',
                 'category' => 'required',
                 'content' => 'required',
             ],
             [
                 'required' => 'Il campo è obbligatorio!',
-                'unique' => 'Questo titolo è già stato utilizzato'
+                'unique' => 'Questo accoppiamento titolo-autore è già stato utilizzato'
             ]
         );
         
@@ -100,18 +100,18 @@ class PostController extends Controller
 
         $request->validate(
             [
-                'title' => [
+                'title' => 'required',
+                'slug' => [
                     'required',
                     Rule::unique('posts')->ignore($post->id)
                 ],
-                'slug' => 'required',
                 'author' => 'required',
                 'category' => 'required',
                 'content' => 'required',
             ],
             [
                 'required' => 'Il campo è obbligatorio!',
-                'unique' => 'Questo titolo è già stato utilizzato'
+                'unique' => 'Questo accoppiamento titolo-autore è già stato utilizzato'
             ]
         );
         

@@ -206,6 +206,8 @@ body {
 main {
   min-height: calc(100vh - 77px);
   margin-top: 77px;
+  color: #32373C;
+  background-color: #E5E5E5;
 }
 
 main.pb-4,
@@ -238,7 +240,7 @@ a:hover {
 h1.title {
   font-size: 50px;
   font-weight: 500;
-  color: #464646;
+  color: #32373C;
 }
 
 h1.title.mb-5,
@@ -246,16 +248,13 @@ h1.title.my-5 {
   margin-bottom: 30px !important;
 }
 
-strong {
-  color: #217599;
-}
-
 label {
-  color: #217599;
+  color: #3490DC;
 }
 
 .table thead th {
-  color: #217599;
+  text-transform: uppercase;
+  color: #E5E5E5;
 }
 
 small {
@@ -270,6 +269,34 @@ small {
 
 .alert {
   padding: 0 !important;
+}
+
+.page-item:last-child .page-link {
+  border: 1px solid #ffffff !important;
+  color: #ffffff;
+  background-color: #343A40;
+}
+
+.page-item:not(:first-child) .page-link {
+  border: 1px solid #ffffff !important;
+  color: #ffffff;
+  background-color: #343A40;
+}
+
+.page-item:first-child .page-link {
+  border: 1px solid #ffffff !important;
+  color: #ffffff;
+  background-color: #343A40;
+}
+
+.page-item.disabled .page-link {
+  border: 1px solid #ffffff !important;
+  color: #ffffff !important;
+  background-color: #343A40 !important;
+}
+
+.page-item.active .page-link {
+  border: 1px solid #ffffff !important;
 }
 
 /*!
@@ -11220,36 +11247,45 @@ header {
   left: 0;
   width: 100%;
   height: 77px;
+  box-shadow: 0 0 10px 1px gray;
+}
+
+header nav {
+  height: 100%;
+  background-image: linear-gradient(to right, #221F1F, #3d3d3d, #221F1F);
 }
 
 header nav a img {
   width: 180px;
+  filter: invert(100%) brightness(200%);
 }
 
 header nav.navbar-light .navbar-nav .nav-link {
+  margin: 0 5px;
+  text-transform: uppercase;
   font-weight: 500;
-  color: #217599;
+  color: #ffffff;
   transition: color 0.3s;
 }
 
 header nav.navbar-light .navbar-nav .nav-link:hover {
-  color: #464646;
+  color: #3490DC;
 }
 
 header nav.navbar-light .navbar-nav .nav-link.online_site {
   padding: 2.5px 8px;
   border-radius: 5px;
-  border: 1px solid #217599;
+  border: 1px solid #ffffff;
   margin-left: 10px;
   text-transform: uppercase;
   color: #ffffff;
-  background-color: #217599;
+  background-color: invisible;
   transition: color 0.3s, background-color 0.3s;
 }
 
 header nav.navbar-light .navbar-nav .nav-link.online_site:hover {
-  border: 1px solid #217599;
-  color: #217599;
+  border: 1px solid #ffffff;
+  color: #3490DC;
   background-color: #ffffff;
 }
 
@@ -11271,12 +11307,12 @@ header nav.navbar-light .navbar-nav .nav-link.online_site:hover {
   margin-bottom: 15px;
   text-align: center;
   font-size: 40px;
-  color: #217599;
+  color: #3490DC;
 }
 
 #guest_home .container p {
   text-align: center;
   font-size: 20px;
-  color: #464646;
+  color: #32373C;
 }
 

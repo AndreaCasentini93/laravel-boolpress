@@ -13,6 +13,8 @@ body {
 main {
     min-height: calc(100vh - 77px);
     margin-top: 77px;
+    color: $base-color-2;
+    background-color: $main-bg;
 
     &.pb-4, &.py-4 {
         padding: 0 !important;
@@ -51,16 +53,13 @@ h1.title {
     }
 }
 
-strong {
-    color: $base-color-1;
-}
-
 label {
     color: $base-color-1;
 }
 
 .table thead th {
-    color: $base-color-1;
+    text-transform: uppercase;
+    color: $main-bg;
 }
 
 small {
@@ -75,4 +74,28 @@ small {
 
 .alert {
     padding: 0 !important;
+}
+
+.page-item:last-child .page-link {
+    border: 1px solid $base-color-0 !important;
+    color: $base-color-0;
+    background-color: #343A40;
+}
+.page-item:not(:first-child) .page-link {
+    border: 1px solid $base-color-0 !important;
+    color: $base-color-0;
+    background-color: #343A40;
+}
+.page-item:first-child .page-link {
+    border: 1px solid $base-color-0 !important;
+    color: $base-color-0;
+    background-color: #343A40;
+}
+.page-item.disabled .page-link {
+    border: 1px solid $base-color-0 !important;
+    color: $base-color-0 !important;
+    background-color: #343A40 !important;
+}
+.page-item.active .page-link {
+    border: 1px solid $base-color-0 !important;
 }

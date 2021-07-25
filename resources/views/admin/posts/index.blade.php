@@ -11,12 +11,13 @@
                     {{ session('delete') }}
                 </div>
             @endif
-            <table class="table table-striped">
+            <table class="table table-striped table-dark">
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Title</th>
-                    <th scope="col">Slug</th>
+                    <th scope="col">Autore</th>
+                    <th scope="col">Categoria</th>
                     <th scope="col" colspan="3">Altro</th>
                   </tr>
                 </thead>
@@ -25,7 +26,8 @@
                       <tr>
                           <td>{{ $post->id }}</td>
                           <td>{{ $post->title }}</td>
-                          <td>{{ $post->slug }}</td>
+                          <td>{{ $post->author }}</td>
+                          <td>{{ $post->category }}</td>
                           <td>
                             <a class="btn btn-success" href="{{ route('admin.posts.show', $post->id) }}">SHOW</a>
                           </td>
