@@ -1,0 +1,21 @@
+header {
+    height: $header-height;
+
+    nav {
+        a {
+            img {
+                width: 150px;
+            }
+        }
+
+        &.navbar-light .navbar-nav .nav-link {
+            color: $navbar-links-color;
+            font-weight: 500;
+            transition: color .3s;
+
+            &:hover {
+                color: $navbar-links-color-hover;
+            }
+        }
+    }
+}

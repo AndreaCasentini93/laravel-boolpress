@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'WordPress | Lista Post')
+
 @section('content')
     <section>
         <div class="container">
