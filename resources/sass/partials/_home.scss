@@ -1,5 +1,27 @@
-#guest_home {
-    height: calc(100vh - 157px);
+#dashboard {
+
+    .card {
+        background-color: unset;
+        border: unset;
+        border-radius: unset;
+    }
+
+    .card-body {
+        padding: unset;
+        text-align: center;
+        font-size: 30px;
+        color: $special-red;
+    }
+}
+
+#home {
+    &.guest_home {
+        height: calc(100vh - 157px);
+    }
+
+    &.admin_home {
+        height: calc(100vh - 268.8px);
+    }
 
     .container {
         height: 100%;

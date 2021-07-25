@@ -15,7 +15,7 @@
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Title</th>
+                    <th scope="col">Titolo</th>
                     <th scope="col">Autore</th>
                     <th scope="col">Categoria</th>
                     <th scope="col" colspan="3">Altro</th>
