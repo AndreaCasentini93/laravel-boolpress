@@ -23,8 +23,8 @@ header {
             margin: 0 15px;
         }
 
-        li:not(.site).active,
-        li:not(.site):hover {
+        li:not(.site, .not_active).active,
+        li:not(.site, .not_active):hover {
             padding: 28.1px 0;
             border-bottom: 4px solid $base-color-1;
         }
@@ -46,7 +46,7 @@ header {
                 padding: 8px 25px;
                 border-radius: 5px;
                 border: 1px solid $base-color-0;
-                margin-left: 10px;
+                margin-left: 20px;
                 text-transform: uppercase;
                 color: $base-color-0;
                 background-color: invisible;

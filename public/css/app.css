@@ -11243,6 +11243,15 @@ small {
   background-color: #3490DC !important;
 }
 
+#admin_home {
+  height: calc(100vh - 276px);
+}
+
+#admin_home img {
+  display: block;
+  width: 80%;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -11268,8 +11277,8 @@ header .navbar li:not(.site) {
   margin: 0 15px;
 }
 
-header .navbar li:not(.site).active,
-header .navbar li:not(.site):hover {
+header .navbar li:not(.site, .not_active).active,
+header .navbar li:not(.site, .not_active):hover {
   padding: 28.1px 0;
   border-bottom: 4px solid #3490DC;
 }
@@ -11292,7 +11301,7 @@ header .navbar.navbar-light .navbar-nav .nav-link.online_site {
   padding: 8px 25px;
   border-radius: 5px;
   border: 1px solid #ffffff;
-  margin-left: 10px;
+  margin-left: 20px;
   text-transform: uppercase;
   color: #ffffff;
   background-color: invisible;
@@ -11303,41 +11312,5 @@ header .navbar.navbar-light .navbar-nav .nav-link.online_site:hover {
   border: 1px solid #ffffff;
   color: #3490DC;
   background-color: #ffffff;
-}
-
-#home.admin_home {
-  height: calc(100vh - 276px);
-}
-
-#home.admin_home .container img {
-  display: block;
-  width: 80%;
-}
-
-#home.guest_home {
-  height: calc(100vh - 161px);
-}
-
-#home .container {
-  height: 100%;
-}
-
-#home .container img {
-  display: block;
-  width: 60%;
-  margin-bottom: 25px;
-}
-
-#home .container h1 {
-  margin-bottom: 15px;
-  text-align: center;
-  font-size: 40px;
-  color: #3490DC;
-}
-
-#home .container p {
-  text-align: center;
-  font-size: 20px;
-  color: #32373C;
 }
 

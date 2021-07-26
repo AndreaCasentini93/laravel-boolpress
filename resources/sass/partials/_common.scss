@@ -1,5 +1,3 @@
-@import 'variables';
-
 * {
     box-sizing: border-box;
     padding: 0;
@@ -100,4 +98,12 @@ small {
     border: 1px solid $base-color-0 !important;
     color: $base-color-0 !important;
     background-color: $base-color-1 !important;
+}
+
+#admin_home {
+    height: calc(100vh - 276px);
+    img {
+        display: block;
+        width: 80%;
+    }
 }

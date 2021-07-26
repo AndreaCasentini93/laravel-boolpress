@@ -13,10 +13,16 @@
                 <li><strong>Autore</strong>: {{ $post->author }}</li>
                 <li><strong>Categoria</strong>: {{ $post->category }}</li>
             </ul>
+            <br>
             <p>{{ $post->content }}</p>
             <div class="text-center">
                 <a class="btn btn-primary" href="{{ route('admin.posts.edit', $post->id) }}">Modifica Post</a>
                 <a class="btn btn-success" href="{{ route('admin.posts.index') }}">Lista Post</a>
+                <form action="{{ route('admin.posts.destroy', $post->id) }}" onsubmit="return confirm('Sei sicuro di voler eliminare il post \'{{ $post->title }}\'')" method="POST" class="d-inline-block">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" class="btn btn-danger" value="Cancella Post">
+                </form>
             </div>
         </div>
     </section> 
