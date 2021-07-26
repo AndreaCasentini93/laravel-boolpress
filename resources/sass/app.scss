@@ -6,15 +6,11 @@
 // Fontawesome
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
 
-// Variables
-@import 'variables';
-
-// Common
-@import 'common';
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
 // Partials
+@import 'partials/variables';
+@import 'partials/common';
 @import 'partials/header';
 @import 'partials/home';
