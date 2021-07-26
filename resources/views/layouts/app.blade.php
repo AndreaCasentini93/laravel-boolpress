@@ -39,22 +39,22 @@
                             </ul>
     
                             <!-- Right Side Of Navbar -->
-                            <ul class="navbar-nav ml-auto">
+                            <ul class="navbar-nav ml-auto d-flex align-items-center">
                                 <!-- Authentication Links -->
                                 @guest
-                                    <li class="nav-item">
+                                    <li class="nav-item {{ Route::currentRouteName() == 'login'? 'active':'' }}">
                                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                     </li>
                                     @if (Route::has('register'))
-                                        <li class="nav-item">
+                                        <li class="nav-item {{ Route::currentRouteName() == 'register'? 'active':'' }}">
                                             <a class="nav-link" href="{{ route('register') }}">{{ __('Registrati') }}</a>
                                         </li>
                                     @endif
                                 @else
-                                    <li class="nav-item">
+                                    <li class="nav-item {{ Route::currentRouteName() == 'admin.posts.index'? 'active':'' }}">
                                         <a class="nav-link" href="{{ route('admin.posts.index') }}">Elenco post</a>
                                     </li>
-                                    <li class="nav-item">
+                                    <li class="nav-item {{ Route::currentRouteName() == 'admin.posts.create'? 'active':'' }}">
                                         <a class="nav-link" href="{{ route('admin.posts.create') }}">Crea post</a>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -74,7 +74,7 @@
                                             </form>
                                         </div>
                                     </li>
-                                    <li class="nav-item d-flex align-items-center">
+                                    <li class="site nav-item d-flex align-items-center">
                                         <a class="online_site nav-link" href="{{ route('home') }}" target="_blank">Sito Online</a>
                                     </li>
                                 @endguest

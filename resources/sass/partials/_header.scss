@@ -3,12 +3,12 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 77px;
     box-shadow: 0 0 10px 1px $gray;
     z-index: 1;
 
-    nav {
+    .navbar {
         height: 100%;
+        padding: 0;
         background-image: $header-bg;
 
         a {
@@ -18,8 +18,20 @@ header {
             }
         }
 
+        li:not(.site) {
+            padding: 25px 0 29px 0;
+            margin: 0 15px;
+        }
+
+        li:not(.site).active,
+        li:not(.site):hover {
+            padding: 25px 0;
+            border-bottom: 4px solid $base-color-1;
+        }
+
         &.navbar-light .navbar-nav .nav-link {
-            margin: 0 5px;
+            padding: 0;
+            margin: 0;
             text-transform: uppercase;
             font-weight: 500;
             color: $base-color-0;
