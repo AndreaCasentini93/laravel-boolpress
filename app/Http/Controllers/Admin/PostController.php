@@ -10,6 +10,37 @@ use App\Post;
 
 class PostController extends Controller
 {
+    private $postValidationArray = [
+        'title' => 'required|max:255',
+        'author' => 'required|max:255',
+        'category' => 'required|max:255',
+        'content' => 'required',
+    ];
+    
+    private $postValidationMessages = [
+        'title.required' => 'Il titolo è un campo obbligatorio!',
+        'title.max' => 'Il titolo non può contenere più di 255 caratteri!',
+        'author.required' => 'L\'autore è un campo obbligatorio!',
+        'author.max' => 'L\'autore non può contenere più di 255 caratteri!',
+        'category.required' => 'La categoria è un campo obbligatorio!',
+        'category.max' => 'La categoria non può contenere più di 255 caratteri!',
+        'content.required' => 'Il contenuto è un campo obbligatorio!',
+    ];
+
+    private function generateSlug($data) {
+        $slug = Str::slug($data['title'], '-');
+        $existingInModel = Post::where('slug', $slug)->first();
+        $counter = 1;
+
+        while ($existingInModel) {
+            $slug = Str::slug($data['title'], '-') . '-' . $counter;
+            $existingInModel = Post::where('slug', $slug)->first();
+            $counter++;
+        }
+
+        $data['slug'] = $slug;
+        return $data;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -39,25 +70,14 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $request->request->add(['slug' => Str::slug($request->title . ' ' . $request->author)]);
         $data = $request->all();
-
         $request->validate(
-            [
-                'title' => 'required|max:255',
-                'slug' => 'required|unique:posts',
-                'author' => 'required|max:255',
-                'category' => 'required|max:255',
-                'content' => 'required',
-            ],
-            [
-                'required' => 'Il campo è obbligatorio!',
-                'unique' => 'Questo accoppiamento titolo-autore è già stato utilizzato',
-                'max' => 'Il campo contiene un numero di caratteri superiore al limite consentito di 255'
-            ]
+            $this->postValidationArray,
+            $this->postValidationMessages
         );
-        
+
         $post = new Post();
+        $data = $this->generateSlug($data);
         $post->fill($data);
         $post->save();
         return redirect()
@@ -96,26 +116,15 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        $request->request->add(['slug' => Str::slug($request->title . ' ' . $request->author)]);
         $data = $request->all();
-
         $request->validate(
-            [
-                'title' => 'required|max:255',
-                'slug' => [
-                    'required',
-                    Rule::unique('posts')->ignore($post->id)
-                ],
-                'author' => 'required|max:255',
-                'category' => 'required|max:255',
-                'content' => 'required',
-            ],
-            [
-                'required' => 'Il campo è obbligatorio!',
-                'unique' => 'Questo accoppiamento titolo-autore è già stato utilizzato',
-                'max' => 'Il campo contiene un numero di caratteri superiore al limite consentito di 255'
-            ]
+            $this->postValidationArray,
+            $this->postValidationMessages
         );
+
+        if ($post->title != $data['title']) {
+            $this->generateSlug($data);
+        }
         
         $post->update($data);
         return redirect()

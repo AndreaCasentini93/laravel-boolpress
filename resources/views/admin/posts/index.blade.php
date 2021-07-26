@@ -16,6 +16,7 @@
                   <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Titolo</th>
+                    <th scope="col">Slug</th>
                     <th scope="col">Autore</th>
                     <th scope="col">Categoria</th>
                     <th scope="col" colspan="3">Altro</th>
@@ -26,6 +27,7 @@
                       <tr>
                           <td>{{ $post->id }}</td>
                           <td>{{ $post->title }}</td>
+                          <td>{{ $post->slug }}</td>
                           <td>{{ $post->author }}</td>
                           <td>{{ $post->category }}</td>
                           <td>
