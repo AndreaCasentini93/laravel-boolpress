@@ -44,15 +44,16 @@ class PostController extends Controller
 
         $request->validate(
             [
-                'title' => 'required',
+                'title' => 'required|max:255',
                 'slug' => 'required|unique:posts',
-                'author' => 'required',
-                'category' => 'required',
+                'author' => 'required|max:255',
+                'category' => 'required|max:255',
                 'content' => 'required',
             ],
             [
                 'required' => 'Il campo è obbligatorio!',
-                'unique' => 'Questo accoppiamento titolo-autore è già stato utilizzato'
+                'unique' => 'Questo accoppiamento titolo-autore è già stato utilizzato',
+                'max' => 'Il campo contiene un numero di caratteri superiore al limite consentito di 255'
             ]
         );
         
@@ -100,18 +101,19 @@ class PostController extends Controller
 
         $request->validate(
             [
-                'title' => 'required',
+                'title' => 'required|max:255',
                 'slug' => [
                     'required',
                     Rule::unique('posts')->ignore($post->id)
                 ],
-                'author' => 'required',
-                'category' => 'required',
+                'author' => 'required|max:255',
+                'category' => 'required|max:255',
                 'content' => 'required',
             ],
             [
                 'required' => 'Il campo è obbligatorio!',
-                'unique' => 'Questo accoppiamento titolo-autore è già stato utilizzato'
+                'unique' => 'Questo accoppiamento titolo-autore è già stato utilizzato',
+                'max' => 'Il campo contiene un numero di caratteri superiore al limite consentito di 255'
             ]
         );
         
