@@ -16,11 +16,17 @@
                     @error('title')
                         <small>{{ $message }}</small>
                     @enderror
+                    @error('slug')
+                        <small>{{ $message }}</small>
+                    @enderror
                 </div>
                 <div class="mb-3">
                     <label for="author" class="form-label">Autore</label>
                     <input name="author" type="text" class="form-control @error('author') is-invalid @enderror" id="author" aria-describedby="emailHelp" placeholder="Inserisci URL Immagine" value="{{ old('author') }}">
                     @error('author')
+                        <small>{{ $message }}</small>
+                    @enderror
+                    @error('slug')
                         <small>{{ $message }}</small>
                     @enderror
                 </div>

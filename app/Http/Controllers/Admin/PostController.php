@@ -39,7 +39,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $request->request->add(['slug' => Str::slug($request->title)]);
+        $request->request->add(['slug' => Str::slug($request->title . ' ' . $request->author)]);
         $data = $request->all();
 
         $request->validate(
@@ -95,7 +95,7 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        $request->request->add(['slug' => Str::slug($request->title)]);
+        $request->request->add(['slug' => Str::slug($request->title . ' ' . $request->author)]);
         $data = $request->all();
 
         $request->validate(
