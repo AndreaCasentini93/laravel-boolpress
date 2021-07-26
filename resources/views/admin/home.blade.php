@@ -24,9 +24,7 @@
     </div>
     <section id="home" class="admin_home">
         <div class="container d-flex justify-content-center align-items-center">
-            <div class="d-flex flex-column align-items-center">
-                <img src="{{ asset('img/anteprima-wordpress.png') }}" alt="">
-            </div>
+            <img src="{{ asset('img/anteprima-wordpress.png') }}" alt="">
         </div>
     </section>
 @endsection
