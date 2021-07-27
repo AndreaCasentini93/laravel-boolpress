@@ -16,7 +16,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($category->posts as $post)
+                  @forelse ($category->posts as $post)
                       <tr>
                           <td>{{ $post->id }}</td>
                           <td>{{ $post->title }}</td>
@@ -35,7 +35,11 @@
                             </form>
                           </td>
                       </tr>
-                  @endforeach
+                  @empty
+                      <tr>
+                        <td colspan="5">Nessun Post corrisponde alla categoria "{{ $category->name }}"</td>
+                      </tr>
+                  @endforelse
                 </tbody>
             </table>
         </div>
