@@ -77,27 +77,32 @@ small {
 .page-item:last-child .page-link {
     border: 1px solid $base-color-0 !important;
     color: $base-color-0;
-    background-color: $base-color-2;
+    background-color: $base-color-3;
 }
 .page-item:not(:first-child) .page-link {
     border: 1px solid $base-color-0 !important;
     color: $base-color-0;
-    background-color: $base-color-2;
+    background-color: $base-color-3;
 }
 .page-item:first-child .page-link {
     border: 1px solid $base-color-0 !important;
     color: $base-color-0;
-    background-color: $base-color-2;
+    background-color: $base-color-3;
 }
 .page-item.disabled .page-link {
     border: 1px solid $base-color-0 !important;
     color: $base-color-0 !important;
-    background-color: $base-color-2 !important;
+    background-color: $base-color-3 !important;
 }
 .page-item.active .page-link {
     border: 1px solid $base-color-0 !important;
     color: $base-color-0 !important;
     background-color: $base-color-1 !important;
+}
+.page-link:hover {
+    color: $base-color-0 !important;
+    background-color: $base-color-2 !important;
+    border-color: $base-color-2 !important;
 }
 
 #admin_home {
