@@ -11,6 +11,7 @@
             <h1 class="title text-center mb-5">{{ $post->title }}</h1>
             <br>
             <p>{{ $post->content }}</p>
+            <br>
             <div class="text-center">
                 <a class="btn btn-primary" href="{{ route('admin.posts.edit', $post->id) }}">Modifica Post</a>
                 <a class="btn btn-success" href="{{ route('admin.posts.index') }}">Lista Post</a>
