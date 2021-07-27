@@ -12,19 +12,13 @@ class PostController extends Controller
 {
     private $postValidationArray = [
         'title' => 'required|max:255',
-        'author' => 'required|max:255',
-        'category' => 'required|max:255',
-        'content' => 'required',
+        'content' => 'required'
     ];
     
     private $postValidationMessages = [
         'title.required' => 'Il titolo è un campo obbligatorio!',
         'title.max' => 'Il titolo non può contenere più di 255 caratteri!',
-        'author.required' => 'L\'autore è un campo obbligatorio!',
-        'author.max' => 'L\'autore non può contenere più di 255 caratteri!',
-        'category.required' => 'La categoria è un campo obbligatorio!',
-        'category.max' => 'La categoria non può contenere più di 255 caratteri!',
-        'content.required' => 'Il contenuto è un campo obbligatorio!',
+        'content.required' => 'Il contenuto è un campo obbligatorio!'
     ];
 
     private function generateSlug($data) {

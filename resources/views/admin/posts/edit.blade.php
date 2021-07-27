@@ -18,20 +18,6 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="author" class="form-label">Autore</label>
-                    <input name="author" type="text" class="form-control @error('author') is-invalid @enderror" id="author" aria-describedby="emailHelp" placeholder="Inserisci URL Immagine" value="{{ old('author', $post->author) }}">
-                    @error('author')
-                        <small>{{ $message }}</small>
-                    @enderror
-                </div>
-                <div class="mb-3">
-                    <label for="category" class="form-label">Categoria</label>
-                    <input name="category" type="text" class="form-control @error('category') is-invalid @enderror" id="category" aria-describedby="emailHelp" placeholder="Inserisci Serie" value="{{ old('category', $post->category) }}">
-                    @error('category')
-                        <small>{{ $message }}</small>
-                    @enderror
-                </div>
-                <div class="mb-3">
                     <label for="content" class="form-label">Contenuto</label>
                     <textarea name="content" id="content" class="form-control @error('content') is-invalid @enderror" cols="30" rows="7" placeholder="Inserisci Descrizione">{{ old('content', $post->content) }}</textarea>
                     @error('content')

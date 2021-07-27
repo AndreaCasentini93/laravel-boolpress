@@ -9,10 +9,6 @@
                 <div class="alert alert-success">{{ session('message') }}</div>
             @endif
             <h1 class="title text-center mb-5">{{ $post->title }}</h1>
-            <ul>
-                <li><strong>Autore</strong>: {{ $post->author }}</li>
-                <li><strong>Categoria</strong>: {{ $post->category }}</li>
-            </ul>
             <br>
             <p>{{ $post->content }}</p>
             <div class="text-center">
