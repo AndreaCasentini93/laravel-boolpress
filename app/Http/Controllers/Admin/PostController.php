@@ -7,18 +7,21 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use App\Post;
+use App\Category;
 
 class PostController extends Controller
 {
     private $postValidationArray = [
         'title' => 'required|max:255',
-        'content' => 'required'
+        'content' => 'required',
+        'category_id' => 'nullable|exists:categories,id'
     ];
     
     private $postValidationMessages = [
         'title.required' => 'Il titolo è un campo obbligatorio!',
         'title.max' => 'Il titolo non può contenere più di 255 caratteri!',
-        'content.required' => 'Il contenuto è un campo obbligatorio!'
+        'content.required' => 'Il contenuto è un campo obbligatorio!',
+        'category_id.exists' => 'La categoria scelta è inesistente!'
     ];
 
     private function generateSlug($data) {
@@ -53,7 +56,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create');
+        $categories = Category::all();
+        return view('admin.posts.create', compact('categories'));
     }
 
     /**
@@ -98,7 +102,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('admin.posts.edit', compact('post'));
+        $categories = Category::all();
+        return view('admin.posts.edit', compact('post', 'categories'));
     }
 
     /**

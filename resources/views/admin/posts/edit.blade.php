@@ -5,7 +5,7 @@
 @section('content')
     <section>
         <div class="container">
-            <h1 class="title text-center mb-5">Modifica "<span class="text-success">{{ $post->title }}</span>"</h1>
+            <h1 class="title text-center mb-5">Modifica "<span class="text-primary">{{ $post->title }}</span>"</h1>
             <form action="{{ route('admin.posts.update', $post->id) }}" method="POST">
                 @csrf
                 @method('PATCH')
@@ -14,6 +14,18 @@
                     <label for="title" class="form-label">Titolo</label>
                     <input name="title" type="text" class="form-control @error('title') is-invalid @enderror" id="title" aria-describedby="emailHelp" placeholder="Inserisci Titolo" value="{{ old('title', $post->title) }}">
                     @error('title')
+                        <small>{{ $message }}</small>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="category_id" class="form-label">Titolo</label>
+                    <select name="category_id" class="form-control @error('category_id') is-invalid @enderror" id="category_id">
+                        <option value="">-- Seleziona Categoria --</option>
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}" {{ $category->id == old('category_id', $post->category_id)? 'selected':'' }}>{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                    @error('category_id')
                         <small>{{ $message }}</small>
                     @enderror
                 </div>

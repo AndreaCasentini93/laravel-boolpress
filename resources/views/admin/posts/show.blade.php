@@ -8,7 +8,11 @@
             @if (session('message'))
                 <div class="alert alert-success">{{ session('message') }}</div>
             @endif
-            <h1 class="title text-center mb-5">{{ $post->title }}</h1>
+            <h1 class="title text-center mb-5">{{ $post->title }} 
+            @if ($post->category)
+                <a class="btn btn-secondary" href="{{ route('admin.categories.show', $post->category->id) }}">{{ $post->category->name }}</a>
+            @endif
+            </h1>
             <br>
             <p>{{ $post->content }}</p>
             <br>

@@ -1,37 +1,26 @@
 @extends('layouts.app')
 
-@section('title', 'WordPress | Lista Post')
+@section('title', 'WordPress | Categoria')
 
 @section('content')
     <section>
         <div class="container">
-            <h1 class="title text-center mb-5">Lista dei Post</h1>
-            @if (session('delete'))
-                <div class="alert alert-success">
-                    {{ session('delete') }}
-                </div>
-            @endif
+            <h1 class="title text-center mb-5">Categoria "<span class="text-secondary">{{ $category->name }}</span>"</h1>
             <table class="table table-striped table-dark">
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Titolo</th>
                     <th scope="col">Slug</th>
-                    <th scope="col">Categoria</th>
                     <th scope="col" colspan="3">Altro</th>
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($posts as $post)
+                  @foreach ($category->posts as $post)
                       <tr>
                           <td>{{ $post->id }}</td>
                           <td>{{ $post->title }}</td>
                           <td>{{ $post->slug }}</td>
-                          <td>
-                            @if ($post->category)
-                              {{ $post->category->name }}
-                            @endif
-                          </td>
                           <td>
                             <a class="btn btn-success" href="{{ route('admin.posts.show', $post->id) }}">SHOW</a>
                           </td>
@@ -49,7 +38,6 @@
                   @endforeach
                 </tbody>
             </table>
-            {{ $posts->links() }}
         </div>
     </section>
 @endsection
