@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    // Fillable
     protected $fillable = [
         'title',
         'category_id',
@@ -13,7 +14,12 @@ class Post extends Model
         'content'
     ];
 
+    // Relations
     public function category() {
         return $this->belongsTo('App\Category');
+    }
+
+    public function tags() {
+        return $this->belongsToMany('App\Tag');
     }
 }
