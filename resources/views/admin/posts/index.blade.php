@@ -18,6 +18,7 @@
                     <th scope="col">Titolo</th>
                     <th scope="col">Slug</th>
                     <th scope="col">Categoria</th>
+                    <th scope="col">Tecnologie</th>
                     <th scope="col" colspan="3">Altro</th>
                   </tr>
                 </thead>
@@ -31,6 +32,15 @@
                             @if ($post->category)
                               {{ $post->category->name }}
                             @endif
+                          </td>
+                          <td>
+                            @foreach ($post->tags as $tag)
+                                @if (count($post->tags) > ($tag->id))
+                                  <span>{{ $tag->name }}, </span>
+                                @else 
+                                  <span>{{ $tag->name }}</span>
+                                @endif
+                            @endforeach
                           </td>
                           <td>
                             <a class="btn btn-success" href="{{ route('admin.posts.show', $post->id) }}">SHOW</a>

@@ -8,11 +8,16 @@
             @if (session('message'))
                 <div class="alert alert-success">{{ session('message') }}</div>
             @endif
-            <h1 class="title text-center mb-5">{{ $post->title }} 
+            <h1 class="title text-center mb-3">{{ $post->title }} 
             @if ($post->category)
                 <a class="btn btn-secondary" href="{{ route('admin.categories.show', $post->category->id) }}">{{ $post->category->name }}</a>
             @endif
             </h1>
+            <div class="text-center mb-5">
+                @foreach ($post->tags as $tag)
+                    <a href="{{ route('admin.posts.show', $post->id) }}" class="badge badge-pill btn-dark">{{ $tag->name }}</a>
+                @endforeach
+            </div>
             <br>
             <p>{{ $post->content }}</p>
             <br>
