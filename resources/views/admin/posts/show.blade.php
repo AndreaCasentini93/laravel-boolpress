@@ -13,11 +13,13 @@
                 <a class="btn btn-secondary" href="{{ route('admin.categories.show', $post->category->id) }}">{{ $post->category->name }}</a>
             @endif
             </h1>
-            <div class="text-center mb-5">
-                @foreach ($post->tags as $tag)
-                    <a href="{{ route('admin.posts.show', $post->id) }}" class="badge badge-pill btn-dark">{{ $tag->name }}</a>
-                @endforeach
-            </div>
+            @if (count($post->tags) > 0)
+                <div class="text-center mb-5">
+                    @foreach ($post->tags as $tag)
+                        <a href="{{ route('admin.posts.show', $post->id) }}" class="badge badge-pill btn-dark">{{ $tag->name }}</a>
+                    @endforeach
+                </div>
+            @endif
             <br>
             <p>{{ $post->content }}</p>
             <br>
