@@ -8,20 +8,23 @@ use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use App\Post;
 use App\Category;
+use App\Tag;
 
 class PostController extends Controller
 {
     private $postValidationArray = [
         'title' => 'required|max:255',
         'content' => 'required',
-        'category_id' => 'nullable|exists:categories,id'
+        'category_id' => 'nullable|exists:categories,id',
+        'tags' => 'exists:tags,id'
     ];
     
     private $postValidationMessages = [
         'title.required' => 'Il titolo è un campo obbligatorio!',
         'title.max' => 'Il titolo non può contenere più di 255 caratteri!',
         'content.required' => 'Il contenuto è un campo obbligatorio!',
-        'category_id.exists' => 'La categoria scelta è inesistente!'
+        'category_id.exists' => 'La categoria scelta è inesistente!',
+        'tags.exists' => 'Il tag selezionato è inesistente!'
     ];
 
     private function generateSlug($data) {
@@ -57,7 +60,8 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.posts.create', compact('categories'));
+        $tags = Tag::all();
+        return view('admin.posts.create', compact('categories', 'tags'));
     }
 
     /**
@@ -77,7 +81,7 @@ class PostController extends Controller
         $post = new Post();
         $data = $this->generateSlug($data);
         $post->fill($data);
-        $post->save();
+        // $post->save();
         return redirect()
             ->route('admin.posts.show', $post->id)
             ->with('message', 'Il post "' . addslashes($post->title) . '" è stato salvato con successo!');
