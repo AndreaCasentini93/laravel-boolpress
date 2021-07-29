@@ -12,6 +12,7 @@
                     <th scope="col">ID</th>
                     <th scope="col">Titolo</th>
                     <th scope="col">Slug</th>
+                    <th scope="col">Tecnologie</th>
                     <th scope="col" colspan="3">Altro</th>
                   </tr>
                 </thead>
@@ -21,6 +22,21 @@
                           <td>{{ $post->id }}</td>
                           <td>{{ $post->title }}</td>
                           <td>{{ $post->slug }}</td>
+                          <td>
+                            @php
+                                $count = 0;
+                            @endphp
+                            @foreach ($post->tags as $tag)
+                                @php
+                                    $count++;
+                                @endphp
+                                @if (count($post->tags) > $count)
+                                  <span>{{ $tag->name }}, </span>
+                                @else
+                                  <span>{{ $tag->name }}</span>
+                                @endif
+                            @endforeach
+                          </td>
                           <td>
                             <a class="btn btn-success" href="{{ route('admin.posts.show', $post->id) }}">SHOW</a>
                           </td>
