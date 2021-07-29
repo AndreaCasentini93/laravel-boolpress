@@ -34,10 +34,16 @@
                             @endif
                           </td>
                           <td>
+                            @php
+                                $count = 0;
+                            @endphp
                             @foreach ($post->tags as $tag)
-                                @if (count($post->tags) > ($tag->id))
+                                @php
+                                    $count++;
+                                @endphp
+                                @if (count($post->tags) > $count)
                                   <span>{{ $tag->name }}, </span>
-                                @else 
+                                @else
                                   <span>{{ $tag->name }}</span>
                                 @endif
                             @endforeach
