@@ -88,6 +88,11 @@ export default {
             margin: 15px;
             background-color: $white;
             box-shadow: inset 0 0 10px 1px $gray;
+            transition: transform .3s;
+
+            &:hover {
+                transform: scale(1.08);
+            }
 
             h4 {
                 margin-bottom: 25px;
@@ -100,6 +105,9 @@ export default {
             }
 
             a {
+                text-align: center;
+                font-size: 14px;
+                font-weight: 500;
                 color: $base-color-1;
                 transition: color .3s;
 
