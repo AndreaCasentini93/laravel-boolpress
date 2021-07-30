@@ -11145,20 +11145,6 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-main {
-  min-height: calc(100vh - 81px);
-  margin-top: 81px;
-  color: #32373C;
-  background-color: #E5E5E5;
-}
-
-main.pb-4,
-main.py-4 {
-  padding: 0 !important;
-  padding-top: 40px !important;
-  padding-bottom: 40px !important;
-}
-
 ul {
   list-style: none;
   padding: 0;
@@ -11177,6 +11163,82 @@ a {
 
 a:hover {
   color: unset;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 0 10px 1px gray;
+  z-index: 5;
+}
+
+header .navbar {
+  height: 100%;
+  padding: 0;
+  background-image: linear-gradient(to right, #221F1F, #3d3d3d, #221F1F);
+}
+
+header .navbar a img {
+  width: 180px;
+  filter: invert(100%) brightness(200%);
+}
+
+header .navbar li:not(.site) {
+  padding: 28.1px 0 32.1px 0;
+  margin: 0 15px;
+}
+
+header .navbar li:not(.site, .not_active).active,
+header .navbar li:not(.site, .not_active):hover {
+  padding: 28.1px 0;
+  border-bottom: 4px solid #3490DC;
+}
+
+header .navbar.navbar-light .navbar-nav .nav-link {
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+header .navbar.navbar-light .navbar-nav .nav-link:hover {
+  color: #3490DC;
+}
+
+header .navbar.navbar-light .navbar-nav .nav-link.online_site {
+  padding: 8px 25px;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  margin-left: 20px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: invisible;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+header .navbar.navbar-light .navbar-nav .nav-link.online_site:hover {
+  border: 1px solid #ffffff;
+  color: #3490DC;
+  background-color: #ffffff;
+}
+
+main {
+  min-height: calc(100vh - 81px);
+  margin-top: 81px;
+  color: #32373C;
+  background-color: #E5E5E5;
+}
+
+main.pb-4,
+main.py-4 {
+  padding: 0 !important;
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
 }
 
 h1.title {
@@ -11256,68 +11318,6 @@ small {
 #admin_home img {
   display: block;
   width: 80%;
-}
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  box-shadow: 0 0 10px 1px gray;
-  z-index: 5;
-}
-
-header .navbar {
-  height: 100%;
-  padding: 0;
-  background-image: linear-gradient(to right, #221F1F, #3d3d3d, #221F1F);
-}
-
-header .navbar a img {
-  width: 180px;
-  filter: invert(100%) brightness(200%);
-}
-
-header .navbar li:not(.site) {
-  padding: 28.1px 0 32.1px 0;
-  margin: 0 15px;
-}
-
-header .navbar li:not(.site, .not_active).active,
-header .navbar li:not(.site, .not_active):hover {
-  padding: 28.1px 0;
-  border-bottom: 4px solid #3490DC;
-}
-
-header .navbar.navbar-light .navbar-nav .nav-link {
-  padding: 0;
-  margin: 0;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 500;
-  color: #ffffff;
-  transition: color 0.3s;
-}
-
-header .navbar.navbar-light .navbar-nav .nav-link:hover {
-  color: #3490DC;
-}
-
-header .navbar.navbar-light .navbar-nav .nav-link.online_site {
-  padding: 8px 25px;
-  border-radius: 5px;
-  border: 1px solid #ffffff;
-  margin-left: 20px;
-  text-transform: uppercase;
-  color: #ffffff;
-  background-color: invisible;
-  transition: color 0.3s, background-color 0.3s;
-}
-
-header .navbar.navbar-light .navbar-nav .nav-link.online_site:hover {
-  border: 1px solid #ffffff;
-  color: #3490DC;
-  background-color: #ffffff;
 }
 
 #error_404 {

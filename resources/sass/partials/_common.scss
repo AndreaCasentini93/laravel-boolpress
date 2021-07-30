@@ -8,19 +8,6 @@ body {
     font-family: $font-family-sans-serif;
 }
 
-main {
-    min-height: calc(100vh - 81px);
-    margin-top: 81px;
-    color: $base-color-2;
-    background-color: $main-bg;
-
-    &.pb-4, &.py-4 {
-        padding: 0 !important;
-        padding-top: 40px !important;
-        padding-bottom: 40px !important;
-    }
-}
-
 ul {
     list-style: none;
     padding: 0;
@@ -38,77 +25,5 @@ a {
 
     &:hover {
         color: unset;
-    }
-}
-
-h1.title {
-    font-size: 50px;
-    font-weight: 500;
-    color: $base-color-2;
-
-    &.mb-5, &.my-5 {
-        margin-bottom: 30px !important;
-    }
-}
-
-label {
-    color: $base-color-1;
-}
-
-.table thead th {
-    text-transform: uppercase;
-    color: $main-bg;
-}
-
-small {
-    color: $special-red;
-}
-
-.alert-success {
-    color: $special-red !important;
-    background-color: unset !important;
-    border: unset !important;
-}
-
-.alert {
-    padding: 0 !important;
-}
-
-.page-item:last-child .page-link {
-    border: 1px solid $base-color-0 !important;
-    color: $base-color-0;
-    background-color: $base-color-3;
-}
-.page-item:not(:first-child) .page-link {
-    border: 1px solid $base-color-0 !important;
-    color: $base-color-0;
-    background-color: $base-color-3;
-}
-.page-item:first-child .page-link {
-    border: 1px solid $base-color-0 !important;
-    color: $base-color-0;
-    background-color: $base-color-3;
-}
-.page-item.disabled .page-link {
-    border: 1px solid $base-color-0 !important;
-    color: $base-color-0 !important;
-    background-color: $base-color-3 !important;
-}
-.page-item.active .page-link {
-    border: 1px solid $base-color-0 !important;
-    color: $base-color-0 !important;
-    background-color: $base-color-1 !important;
-}
-.page-link:hover {
-    color: $base-color-0 !important;
-    background-color: $base-color-2 !important;
-    border-color: $base-color-2 !important;
-}
-
-#admin_home {
-    height: calc(100vh - 276px);
-    img {
-        display: block;
-        width: 80%;
     }
 }

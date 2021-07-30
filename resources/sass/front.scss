@@ -10,8 +10,5 @@
 @import '~bootstrap/scss/bootstrap';
 
 // Partials
-@import 'partials/variables';
-@import 'partials/common';
-@import 'partials/header';
-@import 'partials/admin';
-@import 'partials/404';
+@import './partials/variables';
+@import './partials/common';
