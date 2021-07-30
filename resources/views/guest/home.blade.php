@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'WordPress | Amministratore')
+@section('title', 'WordPress')
 
 @section('content')
     <div id="root"></div>
