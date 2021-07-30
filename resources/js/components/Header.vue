@@ -37,6 +37,7 @@ export default {
         width: 100%;
         background-color: $white;
         box-shadow: 0 0 10px 1px $gray;
+        z-index: 10;
 
         nav {
             width: 100%;

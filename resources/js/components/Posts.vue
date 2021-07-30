@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="container d-flex flex-wrap justify-content-center">
-            <div v-for="post in posts" :key="post.id" class="card">
+            <div v-for="post in posts" :key="post.id" class="post-card">
                 <h4>{{ post.title }}</h4>
                 <p>{{ post.excerpt }}</p>
                 <a href="/">Leggi</a>
@@ -81,7 +81,7 @@ export default {
         background-size: cover;
         background-repeat: no-repeat;
 
-        .card {
+        .post-card {
             width: calc(100% / 4 - 30px);
             padding: 20px;
             border-radius: 10px;
@@ -105,7 +105,6 @@ export default {
             }
 
             a {
-                text-align: center;
                 font-size: 14px;
                 font-weight: 500;
                 color: $base-color-1;
