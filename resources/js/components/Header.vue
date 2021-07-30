@@ -52,6 +52,7 @@ export default {
                     padding: 30px 0;
                     border-bottom: 4px solid rgba(0, 0, 0, 0);
                     margin: 0 20px;
+                    transition: border .3s;
 
                     &:hover,
                     &.active {
@@ -62,6 +63,7 @@ export default {
                         text-transform: uppercase;
                         font-weight: 500;
                         color: $base-color-2;
+                        transition: color .3s;
 
                         &:hover {
                             text-decoration: none;
