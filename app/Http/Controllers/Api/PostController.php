@@ -16,4 +16,9 @@ class PostController extends Controller
         ];
         return response()->json($result);
     }
+
+    public function show($slug) {
+        $post = Post::where('slug', $slug)->first();
+        return response()->json($post);
+    }
 }

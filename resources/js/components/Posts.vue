@@ -5,7 +5,7 @@
             <div v-for="post in posts" :key="post.id" class="post-card">
                 <h4>{{ post.title }}</h4>
                 <p class="text-left">{{ post.excerpt }}</p>
-                <a href="/">Leggi</a>
+                <router-link :to="{ name: 'single-post', params: { slug: post.slug } }">Leggi</router-link>
             </div>
         </div>
         <br>
