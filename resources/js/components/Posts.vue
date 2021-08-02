@@ -99,7 +99,7 @@ export default {
             font-size: 50px;
             font-weight: 700;
             color: $base-color-0;
-            text-shadow: 1px 1px 8px $base-color-3;
+            text-shadow: 1px 1px 2px $base-color-2;
         }
 
         .post-card {

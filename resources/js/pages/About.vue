@@ -23,6 +23,7 @@ export default {
             font-size: 50px;
             font-weight: 700;
             color: $base-color-1;
+            text-shadow: 1px 1px 2px $base-color-2;
         }
 
         p {
