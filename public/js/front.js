@@ -2688,7 +2688,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "header[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  background-color: #ffffff;\n  box-shadow: 0 0 10px 1px gray;\n  z-index: 10;\n}\nheader nav[data-v-1f42fb90] {\n  width: 100%;\n}\nheader nav a img[data-v-1f42fb90] {\n  width: 180px;\n}\nheader nav ul li[data-v-1f42fb90] {\n  padding: 30px 0;\n  border-bottom: 4px solid rgba(0, 0, 0, 0);\n  margin: 0 20px;\n  transition: border 0.3s;\n}\nheader nav ul li[data-v-1f42fb90]:hover, header nav ul li.active[data-v-1f42fb90] {\n  border-bottom: 4px solid #3490DC;\n}\nheader nav ul li a[data-v-1f42fb90] {\n  text-transform: uppercase;\n  font-weight: 500;\n  color: #32373C;\n  transition: color 0.3s;\n}\nheader nav ul li a[data-v-1f42fb90]:hover {\n  text-decoration: none;\n  color: #3490DC;\n}", ""]);
+exports.push([module.i, "header[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  background-color: #ffffff;\n  box-shadow: 0 0 10px 1px gray;\n  z-index: 10;\n}\nheader nav[data-v-1f42fb90] {\n  width: 100%;\n}\nheader nav a img[data-v-1f42fb90] {\n  width: 180px;\n}\nheader nav ul li[data-v-1f42fb90] {\n  padding: 30.5px 0;\n  border-bottom: 4px solid #00000000;\n  margin: 0 20px;\n  transition: border 0.3s;\n}\nheader nav ul li[data-v-1f42fb90]:hover, header nav ul li.active[data-v-1f42fb90] {\n  border-bottom: 4px solid #3490DC;\n}\nheader nav ul li a[data-v-1f42fb90] {\n  text-transform: uppercase;\n  font-weight: 500;\n  color: #32373C;\n  transition: color 0.3s;\n}\nheader nav ul li a[data-v-1f42fb90]:hover {\n  text-decoration: none;\n  color: #3490DC;\n}", ""]);
 
 // exports
 

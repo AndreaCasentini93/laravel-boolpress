@@ -50,8 +50,8 @@ export default {
 
             ul {
                 li {
-                    padding: 30px 0;
-                    border-bottom: 4px solid rgba(0, 0, 0, 0);
+                    padding: 30.5px 0;
+                    border-bottom: 4px solid #00000000;
                     margin: 0 20px;
                     transition: border .3s;
 
