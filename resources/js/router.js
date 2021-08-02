@@ -16,12 +16,12 @@ const router = new VueRouter ({
             component: Home
         },
         {
-            path: '/',
+            path: '/blog',
             name: 'blog',
             component: Blog
         },
         {
-            path: '/',
+            path: '/about',
             name: 'about',
             component: About
         }

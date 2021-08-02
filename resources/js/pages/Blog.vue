@@ -1,15 +1,19 @@
 <template>
-    <section>
-        Blog
-    </section>
+        <Posts />
 </template>
 
 <script>
+import Posts from '../components/Posts';
+
 export default {
-    name: 'Blog'
+    name: 'Blog',
+    components: {
+        Posts
+    }
 }
 </script>
 
 <style lang="scss" scoped>
+    @import '../../sass/partials/variables.scss';
 
 </style>

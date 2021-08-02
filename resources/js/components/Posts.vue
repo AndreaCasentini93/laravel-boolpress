@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section v-if="posts.length > 0 && !loading" class="blog">
         <div class="container d-flex flex-wrap justify-content-center">
             <div v-for="post in posts" :key="post.id" class="post-card">
                 <h4>{{ post.title }}</h4>
@@ -26,16 +26,26 @@
                 @click="getPosts(current_page + 1)">Next</button>
         </div>
     </section>
+    <NotFound v-else-if="posts.length == 0 && !loading"/>
+    <Loader v-else/>
 </template>
 
 <script>
+import NotFound from './NotFound';
+import Loader from './Loader';
+
 export default {
     name: 'Posts',
+    components: {
+        NotFound,
+        Loader
+    },
     data: function() {
         return {
             posts: [],
             current_page: 1,
-            last_page: 1
+            last_page: 1,
+            loading: true
         }
     },
     methods: {
@@ -58,6 +68,8 @@ export default {
                         post.excerpt = this.truncateText(post.content, 200) + '...';
                     });
 
+                    // this.loading = false;
+
                 })
                 .catch(err => {
                     console.log('Errore: ', err);
@@ -73,7 +85,7 @@ export default {
 <style lang="scss" scoped>
     @import '../../sass/front.scss';
 
-    section {
+    section.blog {
         min-height: calc(100vh - 149px);
         padding: 50px 0;
         background-image: url('../../../public/img/background-posts.jpg');

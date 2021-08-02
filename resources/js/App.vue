@@ -3,7 +3,7 @@
         <Header />
 
         <main>
-            <Posts/>
+            <router-view></router-view>
         </main>
 
         <Footer />
@@ -12,14 +12,12 @@
 
 <script>
 import Header from './components/Header';
-import Posts from './components/Posts';
 import Footer from './components/Footer';
 
 export default {
     name: 'App',
     components: {
         Header,
-        Posts,
         Footer
     }
 }

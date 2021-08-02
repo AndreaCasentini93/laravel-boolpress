@@ -1,19 +1,19 @@
 <template>
-    <header>
+    <header class="d-flex align-items-center">
         <div class="container d-flex align-items-center">
             <nav class="d-flex justify-content-between align-items-center">
                 <a href="/">
                     <img src="../../../public/img/logo-wordpress.png" alt="Logo WordPress">
                 </a>
                 <ul class="d-flex align-items-center">
-                    <li class="active">
-                        <a href="/">Home</a>
+                    <li>
+                        <router-link :to="{ name: 'home' }">Home</router-link>
                     </li>
                     <li>
-                        <a href="/">Blog</a>
+                        <router-link :to="{ name: 'blog' }">Blog</router-link>
                     </li>
                     <li>
-                        <a href="/">Chi siamo</a>
+                        <router-link :to="{ name: 'about' }">Chi Siamo</router-link>
                     </li>
                 </ul>
             </nav>
@@ -35,12 +35,18 @@ export default {
         top: 0;
         left: 0;
         width: 100%;
+        height: 89px;
         background-color: $white;
         box-shadow: 0 0 10px 1px $gray;
         z-index: 10;
 
+        .container {
+            height: 100%;
+        }
+
         nav {
             width: 100%;
+            height: 100%;
 
             a {
                 img {
@@ -49,25 +55,24 @@ export default {
             }
 
             ul {
+                height: 100%;
                 li {
-                    padding: 30.5px 0;
-                    border-bottom: 4px solid #00000000;
-                    margin: 0 20px;
-                    transition: border .3s;
-
-                    &:hover,
-                    &.active {
-                        border-bottom: 4px solid $base-color-1;
-                    }
-
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
                     a {
+                        padding: 30.5px 0;
+                        border-bottom: 4px solid #00000000;
+                        margin: 0 20px;
                         text-transform: uppercase;
+                        text-decoration: none;
                         font-weight: 500;
                         color: $base-color-2;
-                        transition: color .3s;
+                        transition: color .3s, border .3s;
 
-                        &:hover {
-                            text-decoration: none;
+                        &:hover,
+                        &.active {
+                            border-bottom: 4px solid $base-color-1;
                             color: $base-color-1;
                         }
                     }
