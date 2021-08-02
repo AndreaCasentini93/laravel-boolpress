@@ -2,6 +2,12 @@
     <section v-if="post.title != undefined && !loading">
         <div class="container py-5">
             <h1 class="text-center mb-3">{{ post.title }}</h1>
+            <div v-if="post.category">
+                <span class="btn btn-primary mb-3">{{ post.category.name }}</span>
+            </div>
+            <div v-if="post.tags[0]">
+                <span v-for="tag in post.tags" :key="tag.id" class="btn btn-dark mb-3 mr-2">{{ tag.name }}</span>
+            </div>
             <p>{{ post.content }}</p>
         </div>
     </section>
@@ -36,6 +42,8 @@ export default {
                         this.post = {};
                     }
                     this.loading = false;
+                    console.log(this.post.category);
+                    console.log(this.post.tags[0]);
                 })
                 .catch( err => {
                     console.log(err);

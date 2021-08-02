@@ -2705,6 +2705,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2731,6 +2737,8 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         _this.loading = false;
+        console.log(_this.post.category);
+        console.log(_this.post.tags[0]);
       })["catch"](function (err) {
         console.log(err);
       });
@@ -4901,6 +4909,28 @@ var render = function() {
           _c("h1", { staticClass: "text-center mb-3" }, [
             _vm._v(_vm._s(_vm.post.title))
           ]),
+          _vm._v(" "),
+          _vm.post.category
+            ? _c("div", [
+                _c("span", { staticClass: "btn btn-primary mb-3" }, [
+                  _vm._v(_vm._s(_vm.post.category.name))
+                ])
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.post.tags[0]
+            ? _c(
+                "div",
+                _vm._l(_vm.post.tags, function(tag) {
+                  return _c(
+                    "span",
+                    { key: tag.id, staticClass: "btn btn-dark mb-3 mr-2" },
+                    [_vm._v(_vm._s(tag.name))]
+                  )
+                }),
+                0
+              )
+            : _vm._e(),
           _vm._v(" "),
           _c("p", [_vm._v(_vm._s(_vm.post.content))])
         ])
