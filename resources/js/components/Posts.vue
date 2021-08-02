@@ -68,7 +68,7 @@ export default {
                         post.excerpt = this.truncateText(post.content, 200) + '...';
                     });
 
-                    // this.loading = false;
+                    this.loading = false;
 
                 })
                 .catch(err => {

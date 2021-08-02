@@ -17,7 +17,7 @@ export default {
     @import '../../sass/partials/variables.scss';
 
     #loading {
-        height: calc(100vh - 161px);
+        height: calc(100vh - 149px);
 
         .container {
             height: 100%;
@@ -32,6 +32,15 @@ export default {
             i {
                 font-size: 32px;
                 color: $base-color-2;
+                animation: rotation 1s infinite linear;
+            }
+            @keyframes rotation {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
             }
         }
     }

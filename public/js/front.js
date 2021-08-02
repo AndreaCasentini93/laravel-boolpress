@@ -2596,7 +2596,8 @@ __webpack_require__.r(__webpack_exports__);
         _this.last_page = res.data.posts.last_page;
         res.data.posts.data.forEach(function (post) {
           post.excerpt = _this.truncateText(post.content, 200) + '...';
-        }); // this.loading = false;
+        });
+        _this.loading = false;
       })["catch"](function (err) {
         console.log('Errore: ', err);
       });
@@ -2830,7 +2831,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#loading[data-v-e79ec684] {\n  height: calc(100vh - 161px);\n}\n#loading .container[data-v-e79ec684] {\n  height: 100%;\n}\n#loading .container h1[data-v-e79ec684] {\n  margin-bottom: 20px;\n  text-transform: uppercase;\n  font-size: 40px;\n  color: #32373C;\n}\n#loading .container i[data-v-e79ec684] {\n  font-size: 32px;\n  color: #32373C;\n}", ""]);
+exports.push([module.i, "#loading[data-v-e79ec684] {\n  height: calc(100vh - 149px);\n}\n#loading .container[data-v-e79ec684] {\n  height: 100%;\n}\n#loading .container h1[data-v-e79ec684] {\n  margin-bottom: 20px;\n  text-transform: uppercase;\n  font-size: 40px;\n  color: #32373C;\n}\n#loading .container i[data-v-e79ec684] {\n  font-size: 32px;\n  color: #32373C;\n  -webkit-animation: rotation-data-v-e79ec684 1s infinite linear;\n          animation: rotation-data-v-e79ec684 1s infinite linear;\n}\n@-webkit-keyframes rotation-data-v-e79ec684 {\nfrom {\n    transform: rotate(0deg);\n}\nto {\n    transform: rotate(360deg);\n}\n}\n@keyframes rotation-data-v-e79ec684 {\nfrom {\n    transform: rotate(0deg);\n}\nto {\n    transform: rotate(360deg);\n}\n}", ""]);
 
 // exports
 
@@ -2849,7 +2850,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#error_404[data-v-2ce50e5a] {\n  height: calc(100vh - 161px);\n}\n#error_404 .container[data-v-2ce50e5a] {\n  height: 100%;\n}\n#error_404 .container h1[data-v-2ce50e5a] {\n  margin-bottom: 20px;\n  text-transform: uppercase;\n  font-size: 40px;\n  color: #32373C;\n}\n#error_404 .container h3[data-v-2ce50e5a] {\n  margin-bottom: 20px;\n  font-size: 25px;\n  color: #32373C;\n}", ""]);
+exports.push([module.i, "#error_404[data-v-2ce50e5a] {\n  height: calc(100vh - 149px);\n}\n#error_404 .container[data-v-2ce50e5a] {\n  height: 100%;\n}\n#error_404 .container h1[data-v-2ce50e5a] {\n  margin-bottom: 20px;\n  text-transform: uppercase;\n  font-size: 40px;\n  color: #3490DC;\n}\n#error_404 .container h3[data-v-2ce50e5a] {\n  margin-bottom: 20px;\n  font-size: 25px;\n  color: #32373C;\n}", ""]);
 
 // exports
 
@@ -4512,7 +4513,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "router-link",
-          { staticClass: "btn btn-primary", attrs: { to: { name: "home" } } },
+          { staticClass: "btn btn-dark", attrs: { to: { name: "home" } } },
           [_vm._v("Torna alla Home")]
         )
       ],
