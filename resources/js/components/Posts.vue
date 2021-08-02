@@ -1,9 +1,10 @@
 <template>
-    <section v-if="posts.length > 0 && !loading" class="blog">
+    <section v-if="posts.length > 0 && !loading" class="blog text-center">
+        <h1 class="mb-3">Blog</h1>
         <div class="container d-flex flex-wrap justify-content-center">
             <div v-for="post in posts" :key="post.id" class="post-card">
                 <h4>{{ post.title }}</h4>
-                <p>{{ post.excerpt }}</p>
+                <p class="text-left">{{ post.excerpt }}</p>
                 <a href="/">Leggi</a>
             </div>
         </div>
@@ -93,13 +94,21 @@ export default {
         background-size: cover;
         background-repeat: no-repeat;
 
+        h1 {
+            text-transform: uppercase;
+            font-size: 50px;
+            font-weight: 700;
+            color: $base-color-0;
+            text-shadow: 1px 1px 8px $base-color-3;
+        }
+
         .post-card {
-            width: calc(100% / 4 - 30px);
-            padding: 20px;
+            width: calc(100% / 3 - 30px);
+            padding: 30px;
             border-radius: 10px;
             margin: 15px;
             background-color: $white;
-            box-shadow: inset 0 0 10px 1px $gray;
+            box-shadow: inset 0 0 10px 1px $base-color-3;
             transition: transform .3s;
 
             &:hover {
