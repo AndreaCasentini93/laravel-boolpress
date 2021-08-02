@@ -1,14 +1,15 @@
 <template>
     <section v-if="post.title != undefined && !loading">
         <div class="container py-5">
-            <h1 class="text-center mb-3">{{ post.title }}</h1>
-            <div v-if="post.category">
-                <span class="btn btn-primary mb-3">{{ post.category.name }}</span>
-            </div>
-            <div v-if="post.tags[0]">
-                <span v-for="tag in post.tags" :key="tag.id" class="btn btn-dark mb-3 mr-2">{{ tag.name }}</span>
+            <h1 class="text-center mb-2">{{ post.title }}</h1>
+            <div v-if="post.tags[0] || post.category" class="text-center mb-3">
+                <span v-if="post.category" class="badge badge-pill badge-danger">{{ post.category.name }}</span>
+                <span v-for="tag in post.tags" :key="tag.id" class="badge badge-pill badge-dark mr-2">{{ tag.name }}</span>
             </div>
             <p>{{ post.content }}</p>
+            <div class="text-center">
+                <router-link :to="{ name:'blog' }" class="btn btn-primary">Torna al Blog</router-link>
+            </div>
         </div>
     </section>
     <NotFound v-else-if="post.title == undefined && !loading"/>

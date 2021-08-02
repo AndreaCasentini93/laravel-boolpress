@@ -2711,6 +2711,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -4637,7 +4638,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "router-link",
-          { staticClass: "btn btn-dark", attrs: { to: { name: "home" } } },
+          { staticClass: "btn btn-primary", attrs: { to: { name: "home" } } },
           [_vm._v("Torna alla Home")]
         )
       ],
@@ -4906,33 +4907,55 @@ var render = function() {
   return _vm.post.title != undefined && !_vm.loading
     ? _c("section", [
         _c("div", { staticClass: "container py-5" }, [
-          _c("h1", { staticClass: "text-center mb-3" }, [
+          _c("h1", { staticClass: "text-center mb-2" }, [
             _vm._v(_vm._s(_vm.post.title))
           ]),
           _vm._v(" "),
-          _vm.post.category
-            ? _c("div", [
-                _c("span", { staticClass: "btn btn-primary mb-3" }, [
-                  _vm._v(_vm._s(_vm.post.category.name))
-                ])
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _vm.post.tags[0]
+          _vm.post.tags[0] || _vm.post.category
             ? _c(
                 "div",
-                _vm._l(_vm.post.tags, function(tag) {
-                  return _c(
-                    "span",
-                    { key: tag.id, staticClass: "btn btn-dark mb-3 mr-2" },
-                    [_vm._v(_vm._s(tag.name))]
-                  )
-                }),
-                0
+                { staticClass: "text-center mb-3" },
+                [
+                  _vm.post.category
+                    ? _c(
+                        "span",
+                        { staticClass: "badge badge-pill badge-danger" },
+                        [_vm._v(_vm._s(_vm.post.category.name))]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm._l(_vm.post.tags, function(tag) {
+                    return _c(
+                      "span",
+                      {
+                        key: tag.id,
+                        staticClass: "badge badge-pill badge-dark mr-2"
+                      },
+                      [_vm._v(_vm._s(tag.name))]
+                    )
+                  })
+                ],
+                2
               )
             : _vm._e(),
           _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(_vm.post.content))])
+          _c("p", [_vm._v(_vm._s(_vm.post.content))]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "text-center" },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: { to: { name: "blog" } }
+                },
+                [_vm._v("Torna al Blog")]
+              )
+            ],
+            1
+          )
         ])
       ])
     : _vm.post.title == undefined && !_vm.loading
