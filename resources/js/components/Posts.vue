@@ -87,19 +87,13 @@ export default {
     @import '../../sass/front.scss';
 
     section.blog {
-        min-height: calc(100vh - 149px);
-        padding: 50px 0;
-        background-image: url('../../../public/img/background-posts.jpg');
-        background-position: top;
-        background-size: cover;
-        background-repeat: no-repeat;
 
         h1 {
             text-transform: uppercase;
             font-size: 50px;
             font-weight: 700;
             color: $base-color-0;
-            text-shadow: 1px 1px 2px $base-color-2;
+            text-shadow: 1px 1px 2px $black;
         }
 
         .post-card {

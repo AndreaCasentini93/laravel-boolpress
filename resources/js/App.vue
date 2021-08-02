@@ -29,5 +29,10 @@ export default {
     main {
         min-height: calc(100vh - 149px);
         margin-top: 89px;
+        padding: 50px 0;
+        background-image: url('../../public/img/background-posts.jpg');
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 </style>

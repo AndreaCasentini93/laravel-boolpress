@@ -1,14 +1,14 @@
 <template>
     <section v-if="post.title != undefined && !loading">
-        <div class="container py-5">
-            <h1 class="text-center mb-2">{{ post.title }}</h1>
+        <div class="container">
+            <h1 class="text-center mb-3">{{ post.title }}</h1>
             <div v-if="post.tags[0] || post.category" class="text-center mb-3">
                 <span v-if="post.category" class="badge badge-pill badge-danger">{{ post.category.name }}</span>
                 <span v-for="tag in post.tags" :key="tag.id" class="badge badge-pill badge-dark mr-2">{{ tag.name }}</span>
             </div>
             <p>{{ post.content }}</p>
             <div class="text-center">
-                <router-link :to="{ name:'blog' }" class="btn btn-primary">Torna al Blog</router-link>
+                <router-link :to="{ name:'blog' }" class="btn btn-light">Torna al Blog</router-link>
             </div>
         </div>
     </section>
@@ -66,13 +66,14 @@ export default {
             text-transform: uppercase;
             font-size: 50px;
             font-weight: 700;
-            color: $base-color-1;
-            text-shadow: 1px 1px 2px $base-color-2;
+            color: $base-color-0;
+            text-shadow: 1px 1px 2px $black;
         }
 
         p {
             font-size: 18px;
-            color: $base-color-2;
+            color: $base-color-0;
+            text-shadow: 1px 1px 2px $black;
         }
     }
 </style>
