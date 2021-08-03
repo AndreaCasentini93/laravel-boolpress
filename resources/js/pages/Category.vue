@@ -1,7 +1,7 @@
 <template>
     <section v-if="category.name != undefined && !loading">
         <div class="container">
-            <h1 class="text-center mb-3">Post di categoria "<span>{{ category.name }}</span>"</h1>
+            <h1 class="text-center mb-3">Articoli di categoria "<span>{{ category.name }}</span>"</h1>
             <div class="container d-flex flex-wrap justify-content-center">
                 <div v-for="post in category.posts" :key="post.id" class="post-card">
                     <h4>{{ post.title }}</h4>
@@ -11,6 +11,7 @@
             </div>
             <div class="text-center mt-3">
                 <router-link :to="{ name:'blog' }" class="btn btn-light">Torna al Blog</router-link>
+                <router-link :to="{ name:'categories' }" class="btn btn-light">Elenco Categorie</router-link>
             </div>
         </div>
     </section>

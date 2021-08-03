@@ -9,7 +9,7 @@ use App\Post;
 class PostController extends Controller
 {
     public function index() {
-        $posts = Post::paginate(3);
+        $posts = Post::paginate(5);
         $result = [
             'success' => true,
             'posts' => $posts

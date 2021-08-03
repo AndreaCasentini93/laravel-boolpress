@@ -66,7 +66,7 @@ export default {
                     this.last_page = res.data.posts.last_page;
 
                     res.data.posts.data.forEach(post => {
-                        post.excerpt = this.truncateText(post.content, 200) + '...';
+                        post.excerpt = this.truncateText(post.content, 150) + '...';
                     });
 
                     this.loading = false;
@@ -97,8 +97,8 @@ export default {
         }
 
         .post-card {
-            width: calc(100% / 3 - 30px);
-            padding: 30px;
+            width: calc(100% / 5 - 30px);
+            padding: 20px;
             border-radius: 10px;
             margin: 15px;
             background-color: $white;
@@ -112,15 +112,15 @@ export default {
             h4 {
                 margin-bottom: 25px;
                 text-align: center;
-                font-size: 18px;
-            }
-
-            p {
                 font-size: 16px;
             }
 
-            a {
+            p {
                 font-size: 14px;
+            }
+
+            a {
+                font-size: 12px;
                 font-weight: 500;
                 color: $base-color-1;
                 transition: color .3s;

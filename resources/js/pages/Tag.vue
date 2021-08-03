@@ -1,7 +1,7 @@
 <template>
     <section v-if="tag.name != undefined && !loading">
         <div class="container">
-            <h1 class="text-center mb-3">Post con Tag "<span>{{ tag.name }}</span>"</h1>
+            <h1 class="text-center mb-3">Articoli che trattano "<span>{{ tag.name }}</span>"</h1>
             <div class="container d-flex flex-wrap justify-content-center">
                 <div v-for="post in tag.posts" :key="post.id" class="post-card">
                     <h4>{{ post.title }}</h4>
