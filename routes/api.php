@@ -23,5 +23,6 @@ Route::namespace('Api')
 
         Route::get('posts', 'PostController@index');
         Route::get('posts/{slug}', 'PostController@show');
+        Route::get('posts/category/{slug}', 'CategoryController@show');
 
     });

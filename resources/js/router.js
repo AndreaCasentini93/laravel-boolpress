@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Blog from './pages/Blog';
 import About from './pages/About';
 import SinglePost from './pages/SinglePost';
+import Category from './pages/Category';
 import NotFound from './components/NotFound';
 
 const router = new VueRouter ({
@@ -31,6 +32,11 @@ const router = new VueRouter ({
             path: '/blog/:slug',
             name: 'single-post',
             component: SinglePost
+        },
+        {
+            path: '/blog/category/:slug',
+            name: 'category',
+            component: Category
         },
         {
             path: '*',
