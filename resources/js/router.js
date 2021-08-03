@@ -7,6 +7,7 @@ import Blog from './pages/Blog';
 import About from './pages/About';
 import SinglePost from './pages/SinglePost';
 import Category from './pages/Category';
+import Tag from './pages/Tag';
 import NotFound from './components/NotFound';
 
 const router = new VueRouter ({
@@ -37,6 +38,11 @@ const router = new VueRouter ({
             path: '/blog/category/:slug',
             name: 'category',
             component: Category
+        },
+        {
+            path: '/blog/tag/:slug',
+            name: 'tag',
+            component: Tag
         },
         {
             path: '*',

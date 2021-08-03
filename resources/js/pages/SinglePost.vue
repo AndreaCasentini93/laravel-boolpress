@@ -4,7 +4,8 @@
             <h1 class="text-center mb-3">{{ post.title }}</h1>
             <div v-if="post.tags[0] || post.category" class="text-center mb-3">
                 <router-link :to="{ name: 'category', params: { 'slug': post.category.slug } }" v-if="post.category" class="badge badge-danger">{{ post.category.name }}</router-link>
-                <span v-for="tag in post.tags" :key="tag.id" class="badge badge-pill badge-dark mr-2">{{ tag.name }}</span>
+                <!-- <span v-for="tag in post.tags" :key="tag.id" class="badge badge-pill badge-dark mr-2">{{ tag.name }}</span> -->
+                <router-link v-for="tag in post.tags" :key="tag.id" :to="{ name: 'tag', params: { 'slug': tag.slug } }" class="badge badge-pill badge-dark mr-2">{{ tag.name }}</router-link>
             </div>
             <p>{{ post.content }}</p>
             <div class="text-center">
