@@ -106,6 +106,8 @@ export default {
             }
 
             a {
+                display: block;
+                text-align: center;
                 font-size: 14px;
                 font-weight: 500;
                 color: $base-color-1;
