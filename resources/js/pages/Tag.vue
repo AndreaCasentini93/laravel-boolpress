@@ -50,7 +50,7 @@ export default {
                     if (res.data.name != undefined) {
                         this.tag = res.data;
                         res.data.posts.forEach(post => {
-                            post.excerpt = this.truncateText(post.content, 200) + '...';
+                            post.excerpt = this.truncateText(post.content, 150) + '...';
                         });
                     } else {
                         this.tag = {};
@@ -83,8 +83,8 @@ export default {
         }
 
         .post-card {
-            width: calc(100% / 3 - 30px);
-            padding: 30px;
+            width: calc(100% / 5 - 30px);
+            padding: 20px;
             border-radius: 10px;
             margin: 15px;
             background-color: $white;
@@ -98,17 +98,17 @@ export default {
             h4 {
                 margin-bottom: 25px;
                 text-align: center;
-                font-size: 18px;
+                font-size: 16px;
             }
 
             p {
-                font-size: 16px;
+                font-size: 14px;
             }
 
             a {
                 display: block;
                 text-align: center;
-                font-size: 14px;
+                font-size: 12px;
                 font-weight: 500;
                 color: $base-color-1;
                 transition: color .3s;

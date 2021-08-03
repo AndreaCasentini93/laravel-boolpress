@@ -2721,7 +2721,7 @@ __webpack_require__.r(__webpack_exports__);
         if (res.data.name != undefined) {
           _this.category = res.data;
           res.data.posts.forEach(function (post) {
-            post.excerpt = _this.truncateText(post.content, 200) + '...';
+            post.excerpt = _this.truncateText(post.content, 150) + '...';
           });
         } else {
           _this.category = {};
@@ -2895,7 +2895,7 @@ __webpack_require__.r(__webpack_exports__);
         if (res.data.name != undefined) {
           _this.tag = res.data;
           res.data.posts.forEach(function (post) {
-            post.excerpt = _this.truncateText(post.content, 200) + '...';
+            post.excerpt = _this.truncateText(post.content, 150) + '...';
           });
         } else {
           _this.tag = {};
@@ -3168,7 +3168,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "section h1[data-v-9507cef2] {\n  text-transform: uppercase;\n  font-size: 50px;\n  font-weight: 700;\n  color: #ffffff;\n  text-shadow: 1px 1px 2px #000000;\n}\nsection .post-card[data-v-9507cef2] {\n  width: calc(100% / 3 - 30px);\n  padding: 30px;\n  border-radius: 10px;\n  margin: 15px;\n  background-color: #ffffff;\n  box-shadow: inset 0 0 10px 1px #3E444A;\n  transition: transform 0.3s;\n}\nsection .post-card[data-v-9507cef2]:hover {\n  transform: scale(1.08);\n}\nsection .post-card h4[data-v-9507cef2] {\n  margin-bottom: 25px;\n  text-align: center;\n  font-size: 18px;\n}\nsection .post-card p[data-v-9507cef2] {\n  font-size: 16px;\n}\nsection .post-card a[data-v-9507cef2] {\n  display: block;\n  text-align: center;\n  font-size: 14px;\n  font-weight: 500;\n  color: #3490DC;\n  transition: color 0.3s;\n}\nsection .post-card a[data-v-9507cef2]:hover {\n  text-decoration: none;\n  color: #3E444A;\n}", ""]);
+exports.push([module.i, "section h1[data-v-9507cef2] {\n  text-transform: uppercase;\n  font-size: 50px;\n  font-weight: 700;\n  color: #ffffff;\n  text-shadow: 1px 1px 2px #000000;\n}\nsection .post-card[data-v-9507cef2] {\n  width: calc(100% / 5 - 30px);\n  padding: 20px;\n  border-radius: 10px;\n  margin: 15px;\n  background-color: #ffffff;\n  box-shadow: inset 0 0 10px 1px #3E444A;\n  transition: transform 0.3s;\n}\nsection .post-card[data-v-9507cef2]:hover {\n  transform: scale(1.08);\n}\nsection .post-card h4[data-v-9507cef2] {\n  margin-bottom: 25px;\n  text-align: center;\n  font-size: 16px;\n}\nsection .post-card p[data-v-9507cef2] {\n  font-size: 14px;\n}\nsection .post-card a[data-v-9507cef2] {\n  display: block;\n  text-align: center;\n  font-size: 12px;\n  font-weight: 500;\n  color: #3490DC;\n  transition: color 0.3s;\n}\nsection .post-card a[data-v-9507cef2]:hover {\n  text-decoration: none;\n  color: #3E444A;\n}", ""]);
 
 // exports
 
@@ -3225,7 +3225,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "section h1[data-v-9bae6abe] {\n  text-transform: uppercase;\n  font-size: 50px;\n  font-weight: 700;\n  color: #ffffff;\n  text-shadow: 1px 1px 2px #000000;\n}\nsection .post-card[data-v-9bae6abe] {\n  width: calc(100% / 3 - 30px);\n  padding: 30px;\n  border-radius: 10px;\n  margin: 15px;\n  background-color: #ffffff;\n  box-shadow: inset 0 0 10px 1px #3E444A;\n  transition: transform 0.3s;\n}\nsection .post-card[data-v-9bae6abe]:hover {\n  transform: scale(1.08);\n}\nsection .post-card h4[data-v-9bae6abe] {\n  margin-bottom: 25px;\n  text-align: center;\n  font-size: 18px;\n}\nsection .post-card p[data-v-9bae6abe] {\n  font-size: 16px;\n}\nsection .post-card a[data-v-9bae6abe] {\n  display: block;\n  text-align: center;\n  font-size: 14px;\n  font-weight: 500;\n  color: #3490DC;\n  transition: color 0.3s;\n}\nsection .post-card a[data-v-9bae6abe]:hover {\n  text-decoration: none;\n  color: #3E444A;\n}", ""]);
+exports.push([module.i, "section h1[data-v-9bae6abe] {\n  text-transform: uppercase;\n  font-size: 50px;\n  font-weight: 700;\n  color: #ffffff;\n  text-shadow: 1px 1px 2px #000000;\n}\nsection .post-card[data-v-9bae6abe] {\n  width: calc(100% / 5 - 30px);\n  padding: 20px;\n  border-radius: 10px;\n  margin: 15px;\n  background-color: #ffffff;\n  box-shadow: inset 0 0 10px 1px #3E444A;\n  transition: transform 0.3s;\n}\nsection .post-card[data-v-9bae6abe]:hover {\n  transform: scale(1.08);\n}\nsection .post-card h4[data-v-9bae6abe] {\n  margin-bottom: 25px;\n  text-align: center;\n  font-size: 16px;\n}\nsection .post-card p[data-v-9bae6abe] {\n  font-size: 14px;\n}\nsection .post-card a[data-v-9bae6abe] {\n  display: block;\n  text-align: center;\n  font-size: 12px;\n  font-weight: 500;\n  color: #3490DC;\n  transition: color 0.3s;\n}\nsection .post-card a[data-v-9bae6abe]:hover {\n  text-decoration: none;\n  color: #3E444A;\n}", ""]);
 
 // exports
 
