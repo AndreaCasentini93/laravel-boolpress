@@ -3,7 +3,6 @@
         <div class="container">
             <h1 class="text-center mb-3">{{ post.title }}</h1>
             <div v-if="post.tags[0] || post.category" class="text-center mb-3">
-                <!-- <span v-if="post.category" class="badge badge-pill badge-danger">{{ post.category.name }}</span> -->
                 <router-link :to="{ name: 'category', params: { 'slug': post.category.slug } }" v-if="post.category" class="badge badge-danger">{{ post.category.name }}</router-link>
                 <span v-for="tag in post.tags" :key="tag.id" class="badge badge-pill badge-dark mr-2">{{ tag.name }}</span>
             </div>

@@ -2718,15 +2718,15 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get("http://127.0.0.1:8000/api/posts/category/".concat(slug)).then(function (res) {
-        if (res.data.name) {
+        if (res.data.name != undefined) {
           _this.category = res.data;
+          res.data.posts.forEach(function (post) {
+            post.excerpt = _this.truncateText(post.content, 200) + '...';
+          });
         } else {
           _this.category = {};
         }
 
-        res.data.posts.forEach(function (post) {
-          post.excerpt = _this.truncateText(post.content, 200) + '...';
-        });
         _this.loading = false;
       })["catch"](function (err) {
         console.log(err);
@@ -2775,7 +2775,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_NotFound__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/NotFound */ "./resources/js/components/NotFound.vue");
 /* harmony import */ var _components_Loader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Loader */ "./resources/js/components/Loader.vue");
-//
 //
 //
 //

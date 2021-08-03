@@ -46,15 +46,14 @@ export default {
             axios
                 .get(`http://127.0.0.1:8000/api/posts/category/${slug}`)
                 .then( res => {
-                    if (res.data.name) {
+                    if (res.data.name != undefined) {
                         this.category = res.data;
+                        res.data.posts.forEach(post => {
+                            post.excerpt = this.truncateText(post.content, 200) + '...';
+                        });
                     } else {
                         this.category = {};
                     }
-
-                    res.data.posts.forEach(post => {
-                        post.excerpt = this.truncateText(post.content, 200) + '...';
-                    });
 
                     this.loading = false;
                 })
