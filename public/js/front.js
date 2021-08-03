@@ -4996,7 +4996,9 @@ var render = function() {
     ? _c("section", [
         _c("div", { staticClass: "container" }, [
           _c("h1", { staticClass: "text-center mb-3" }, [
-            _vm._v(_vm._s(_vm.category.name))
+            _vm._v('Post di categoria "'),
+            _c("span", [_vm._v(_vm._s(_vm.category.name))]),
+            _vm._v('"')
           ]),
           _vm._v(" "),
           _c(
