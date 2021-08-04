@@ -12,7 +12,7 @@ class HomeController extends Controller
 {
     public function index() {
 
-        // Invia una mail
+        /* Invia una mail */
         // $user = Auth::user();
         // Mail::to($user->email)->send(new SendNewMail());
 
