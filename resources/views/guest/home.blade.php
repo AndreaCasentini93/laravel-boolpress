@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
 
         <!-- Title -->
         <title>WordPress</title>

@@ -3,7 +3,7 @@
         <div class="container d-flex align-items-center">
             <nav class="d-flex justify-content-between align-items-center">
                 <a href="/">
-                    <img src="../../../public/img/logo-wordpress.png" alt="Logo WordPress">
+                    <img src="/images/logo-wordpress.png" alt="Logo WordPress">
                 </a>
                 <ul class="d-flex align-items-center">
                     <li :class="$route.name == 'home'? 'active':'' ">
