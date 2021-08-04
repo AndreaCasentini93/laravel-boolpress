@@ -6,7 +6,7 @@
     <section>
         <div class="container">
             <h1 class="title text-center mb-5">Modifica "<span class="text-primary">{{ $post->title }}</span>"</h1>
-            <form action="{{ route('admin.posts.update', $post->id) }}" method="POST">
+            <form action="{{ route('admin.posts.update', $post->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
 
@@ -64,6 +64,23 @@
                     @enderror
                 </div>
                 {{-- /CONTENT --}}
+
+                {{-- FILE --}}
+                <div class="form-group mb-3">
+                    <label for="cover">Immagine di copertina</label> 
+                    @if ($post->cover)
+                        <div>
+                            <img style="width: 150px; border-radius: 10px;" class="mb-3" src="{{ asset('storage/' . $post->cover) }}" alt="{{ $post->title }}">
+                            <input class="ml-2" type="checkbox" name="old-cover" id="old-cover" {{ $post->cover? 'checked':'' }}>
+                            <label for="old-cover">Mantieni copertina</label>
+                        </div>
+                    @endif
+                    <input type="file" name="cover" id="cover" class="form-control-file">
+                    @error('cover')
+                        <small>{{ $message }}</small>
+                    @enderror
+                </div>
+                {{-- /FILE --}}
 
                 {{-- BUTTON --}}
                 <button type="submit" class="btn btn-primary">Salva</button>

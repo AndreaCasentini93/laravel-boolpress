@@ -21,8 +21,10 @@
                 </div>
             @endif
             <br>
-            <div class="d-flex justify-content-center align-items-center">
-                <img style="width: calc(45% - 80px); border-radius: 10px;" class="m-4" src="{{ asset('storage/' . $post->cover) }}" alt="{{ $post->title }}">
+            <div class="d-flex align-items-center">
+                @if ($post->cover)
+                    <img style="width: calc(45% - 80px); border-radius: 10px;" class="m-4" src="{{ asset('storage/' . $post->cover) }}" alt="{{ $post->title }}">
+                @endif
                 <p class="text-justify">{{ $post->content }}</p>
             </div>
             <br>

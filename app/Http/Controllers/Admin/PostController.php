@@ -28,8 +28,8 @@ class PostController extends Controller
         'content.required' => 'Il contenuto è un campo obbligatorio!',
         'category_id.exists' => 'La categoria scelta è inesistente!',
         'tags.exists' => 'Il tag selezionato è inesistente!',
-        // 'cover.mimes' => '',
-        // 'cover.max' => '',
+        'cover.mimes' => 'La copertina deve essere un file di tipo: jpg, jpeg, png, svg.',
+        'cover.max' => 'La copertina deve avere una dimensione massima di 2048 KB'
     ];
 
     private function generateSlug($data) {
@@ -144,6 +144,17 @@ class PostController extends Controller
 
         if ($post->title != $data['title']) {
             $this->generateSlug($data);
+        }
+
+        if (!array_key_exists('old-cover', $data)) {
+            $post->cover = null;
+        }
+
+        if (array_key_exists('cover', $data)) {
+            if ($post->cover) {
+                Storage::delete($post->cover);
+            }
+            $data['cover'] = Storage::put('post_cover', $data['cover']); 
         }
         
         $post->update($data);
