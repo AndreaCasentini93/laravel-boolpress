@@ -3090,7 +3090,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "header[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 89px;\n  background-color: #ffffff;\n  box-shadow: 0 0 10px 1px gray;\n  z-index: 10;\n}\nheader .container[data-v-1f42fb90] {\n  height: 100%;\n}\nheader nav[data-v-1f42fb90] {\n  width: 100%;\n  height: 100%;\n}\nheader nav a img[data-v-1f42fb90] {\n  width: 180px;\n}\nheader nav ul[data-v-1f42fb90] {\n  height: 100%;\n}\nheader nav ul li[data-v-1f42fb90] {\n  display: flex;\n  align-items: center;\n  height: 100%;\n}\nheader nav ul li a[data-v-1f42fb90] {\n  padding: 30.5px 0;\n  border-bottom: 4px solid #00000000;\n  margin: 0 20px;\n  text-transform: uppercase;\n  text-decoration: none;\n  font-weight: 500;\n  color: #32373C;\n  transition: color 0.3s, border 0.3s;\n}\nheader nav ul li a[data-v-1f42fb90]:hover, header nav ul li a.active[data-v-1f42fb90] {\n  border-bottom: 4px solid #3490DC;\n  color: #3490DC;\n}", ""]);
+exports.push([module.i, "header[data-v-1f42fb90] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 89px;\n  background-color: #ffffff;\n  box-shadow: 0 0 10px 1px gray;\n  z-index: 10;\n}\nheader .container[data-v-1f42fb90] {\n  height: 100%;\n}\nheader nav[data-v-1f42fb90] {\n  width: 100%;\n  height: 100%;\n}\nheader nav a img[data-v-1f42fb90] {\n  width: 180px;\n}\nheader nav ul[data-v-1f42fb90] {\n  height: 100%;\n}\nheader nav ul li[data-v-1f42fb90] {\n  display: flex;\n  align-items: center;\n  height: 100%;\n  padding: 30.5px 0;\n  border-bottom: 4px solid #00000000;\n  margin: 0 20px;\n  transition: border 0.3s;\n}\nheader nav ul li[data-v-1f42fb90]:hover, header nav ul li.active[data-v-1f42fb90] {\n  border-bottom: 4px solid #3490DC;\n}\nheader nav ul li a[data-v-1f42fb90] {\n  text-transform: uppercase;\n  text-decoration: none;\n  font-weight: 500;\n  color: #32373C;\n  transition: color 0.3s;\n}\nheader nav ul li a[data-v-1f42fb90]:hover {\n  color: #3490DC;\n}", ""]);
 
 // exports
 
@@ -4813,6 +4813,7 @@ var render = function() {
           _c("ul", { staticClass: "d-flex align-items-center" }, [
             _c(
               "li",
+              { class: _vm.$route.name == "home" ? "active" : "" },
               [
                 _c("router-link", { attrs: { to: { name: "home" } } }, [
                   _vm._v("Home")
@@ -4823,6 +4824,7 @@ var render = function() {
             _vm._v(" "),
             _c(
               "li",
+              { class: _vm.$route.name == "blog" ? "active" : "" },
               [
                 _c("router-link", { attrs: { to: { name: "blog" } } }, [
                   _vm._v("Blog")
@@ -4833,6 +4835,7 @@ var render = function() {
             _vm._v(" "),
             _c(
               "li",
+              { class: _vm.$route.name == "about" ? "active" : "" },
               [
                 _c("router-link", { attrs: { to: { name: "about" } } }, [
                   _vm._v("Chi Siamo")
@@ -21975,7 +21978,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: 'history',
-  linkExactActiveClass: 'active',
+  // linkExactActiveClass: 'active',
   routes: [{
     path: '/',
     name: 'home',

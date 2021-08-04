@@ -6,13 +6,13 @@
                     <img src="../../../public/img/logo-wordpress.png" alt="Logo WordPress">
                 </a>
                 <ul class="d-flex align-items-center">
-                    <li>
+                    <li :class="$route.name == 'home'? 'active':'' ">
                         <router-link :to="{ name: 'home' }">Home</router-link>
                     </li>
-                    <li>
+                    <li :class="$route.name == 'blog'? 'active':'' ">
                         <router-link :to="{ name: 'blog' }">Blog</router-link>
                     </li>
-                    <li>
+                    <li :class="$route.name == 'about'? 'active':'' ">
                         <router-link :to="{ name: 'about' }">Chi Siamo</router-link>
                     </li>
                 </ul>
@@ -60,19 +60,24 @@ export default {
                     display: flex;
                     align-items: center;
                     height: 100%;
+                    padding: 30.5px 0;
+                    border-bottom: 4px solid #00000000;
+                    margin: 0 20px;
+                    transition: border .3s;
+
+                    &:hover,
+                    &.active {
+                        border-bottom: 4px solid $base-color-1;
+                    }
+
                     a {
-                        padding: 30.5px 0;
-                        border-bottom: 4px solid #00000000;
-                        margin: 0 20px;
                         text-transform: uppercase;
                         text-decoration: none;
                         font-weight: 500;
                         color: $base-color-2;
-                        transition: color .3s, border .3s;
+                        transition: color .3s;
 
-                        &:hover,
-                        &.active {
-                            border-bottom: 4px solid $base-color-1;
+                        &:hover {
                             color: $base-color-1;
                         }
                     }

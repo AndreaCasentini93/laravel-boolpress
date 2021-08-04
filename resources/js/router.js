@@ -13,7 +13,7 @@ import NotFound from './components/NotFound';
 
 const router = new VueRouter ({
     mode: 'history',
-    linkExactActiveClass: 'active',
+    // linkExactActiveClass: 'active',
     routes: [
         {
             path: '/',
