@@ -3,6 +3,7 @@
         <h1 class="mb-3">Blog</h1>
         <div class="container d-flex flex-wrap justify-content-center">
             <div v-for="post in posts" :key="post.id" class="post-card">
+                <img :src="post.cover" :alt="post.title" class="mb-2">
                 <h4 class="bt.2">{{ post.title }}</h4>
                 <p class="text-left">{{ post.excerpt }}</p>
                 <div class="text-center mt-1">
@@ -109,6 +110,12 @@ export default {
 
             &:hover {
                 transform: scale(1.08);
+            }
+
+            img {
+                display: block;
+                width: 100%;
+                max-height: 30%;
             }
 
             h4 {

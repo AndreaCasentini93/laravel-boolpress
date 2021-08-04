@@ -147,6 +147,7 @@ class PostController extends Controller
         }
 
         if (!array_key_exists('old-cover', $data)) {
+            Storage::delete($post->cover);
             $post->cover = null;
         }
 
@@ -178,6 +179,9 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        if ($post->cover) {
+            Storage::delete($post->cover);
+        }
         $post->delete();
         return redirect()
             ->route('admin.posts.index')

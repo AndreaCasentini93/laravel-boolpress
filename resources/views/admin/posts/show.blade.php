@@ -24,6 +24,8 @@
             <div class="d-flex align-items-center">
                 @if ($post->cover)
                     <img style="width: calc(45% - 80px); border-radius: 10px;" class="m-4" src="{{ asset('storage/' . $post->cover) }}" alt="{{ $post->title }}">
+                @else
+                    <img style="width: calc(45% - 80px); border-radius: 10px;" class="m-4" src="{{ asset('images/placeholder.png') }}" alt="{{ $post->title }}">
                 @endif
                 <p class="text-justify">{{ $post->content }}</p>
             </div>

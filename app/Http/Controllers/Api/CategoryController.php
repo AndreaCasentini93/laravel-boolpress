@@ -15,6 +15,15 @@ class CategoryController extends Controller
 
     public function show($slug) {
         $category = Category::where('slug', $slug)->with(['posts'])->first();
+
+        foreach ($category->posts as $post) {
+            if ($post->cover) {
+                $post->cover = url('storage/' . $post->cover);
+            } else {
+                $post->cover = url('images/placeholder.png');
+            }
+        }
+        
         return response()->json($category);
     }
 }

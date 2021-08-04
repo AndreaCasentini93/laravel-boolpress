@@ -6,7 +6,10 @@
                 <router-link :to="{ name: 'category', params: { 'slug': post.category.slug } }" v-if="post.category" class="badge badge-success">{{ post.category.name }}</router-link>
                 <router-link v-for="tag in post.tags" :key="tag.id" :to="{ name: 'tag', params: { 'slug': tag.slug } }" class="badge badge-pill badge-dark mr-2">{{ tag.name }}</router-link>
             </div>
-            <p>{{ post.content }}</p>
+            <div class="d-flex align-items-center">
+                <img :src="post.cover" :alt="post.title" class="m-4">
+                <p>{{ post.content }}</p>
+            </div>
             <div class="text-center">
                 <router-link :to="{ name:'blog' }" class="btn btn-light">Torna al Blog</router-link>
             </div>
@@ -66,6 +69,12 @@ export default {
             font-weight: 700;
             color: $base-color-0;
             text-shadow: 1px 1px 2px $black;
+        }
+
+        img {
+            width: calc(45% - 80px);
+            border-radius: 10px;
+            box-shadow: 0 0 2px 1px $black;
         }
 
         p {

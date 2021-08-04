@@ -4,6 +4,7 @@
             <h1 class="text-center mb-3">Articoli di categoria "<span>{{ category.name }}</span>"</h1>
             <div class="container d-flex flex-wrap justify-content-center">
                 <div v-for="post in category.posts" :key="post.id" class="post-card">
+                    <img :src="post.cover" :alt="post.title" class="mb-2">
                     <h4 class="mb-2">{{ post.title }}</h4>
                     <p class="text-left">{{ post.excerpt }}</p>
                     <router-link :to="{ name: 'single-post', params: { slug: post.slug } }">Leggi</router-link>
@@ -93,6 +94,12 @@ export default {
 
             &:hover {
                 transform: scale(1.08);
+            }
+
+            img {
+                display: block;
+                width: 100%;
+                max-height: 30%;
             }
 
             h4 {
