@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'WordPress | Lista Post')
+@section('title', 'WordPress | Lista dei Post')
 
 @section('content')
     <section>

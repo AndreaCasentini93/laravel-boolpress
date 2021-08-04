@@ -4,12 +4,12 @@
             <h1 class="text-center mb-3">Articoli che trattano "<span>{{ tag.name }}</span>"</h1>
             <div class="container d-flex flex-wrap justify-content-center">
                 <div v-for="post in tag.posts" :key="post.id" class="post-card">
-                    <h4>{{ post.title }}</h4>
+                    <h4 class="mb-2">{{ post.title }}</h4>
                     <p class="text-left">{{ post.excerpt }}</p>
                     <router-link :to="{ name: 'single-post', params: { slug: post.slug } }">Leggi</router-link>
                 </div>
             </div>
-            <div class="text-center mt-3">
+            <div class="text-center mt-1">
                 <router-link :to="{ name:'blog' }" class="btn btn-light">Torna al Blog</router-link>
             </div>
         </div>
@@ -50,7 +50,7 @@ export default {
                     if (res.data.name != undefined) {
                         this.tag = res.data;
                         res.data.posts.forEach(post => {
-                            post.excerpt = this.truncateText(post.content, 150) + '...';
+                            post.excerpt = this.truncateText(post.content, 100) + '...';
                         });
                     } else {
                         this.tag = {};
@@ -96,13 +96,12 @@ export default {
             }
 
             h4 {
-                margin-bottom: 25px;
                 text-align: center;
                 font-size: 16px;
             }
 
             p {
-                font-size: 14px;
+                font-size: 13px;
             }
 
             a {

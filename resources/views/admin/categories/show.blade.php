@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'WordPress | Categoria')
+@section('title', 'WordPress | Categoria "' . $category->name . '"')
 
 @section('content')
     <section>

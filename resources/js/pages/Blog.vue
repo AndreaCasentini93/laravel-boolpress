@@ -3,9 +3,11 @@
         <h1 class="mb-3">Blog</h1>
         <div class="container d-flex flex-wrap justify-content-center">
             <div v-for="post in posts" :key="post.id" class="post-card">
-                <h4>{{ post.title }}</h4>
+                <h4 class="bt.2">{{ post.title }}</h4>
                 <p class="text-left">{{ post.excerpt }}</p>
-                <router-link :to="{ name: 'single-post', params: { slug: post.slug } }">Leggi</router-link>
+                <div class="text-center mt-1">
+                    <router-link :to="{ name: 'single-post', params: { slug: post.slug } }">Leggi</router-link>
+                </div>
             </div>
         </div>
         <br>
@@ -66,7 +68,7 @@ export default {
                     this.last_page = res.data.posts.last_page;
 
                     res.data.posts.data.forEach(post => {
-                        post.excerpt = this.truncateText(post.content, 150) + '...';
+                        post.excerpt = this.truncateText(post.content, 100) + '...';
                     });
 
                     this.loading = false;
@@ -110,13 +112,12 @@ export default {
             }
 
             h4 {
-                margin-bottom: 25px;
                 text-align: center;
                 font-size: 16px;
             }
 
             p {
-                font-size: 14px;
+                font-size: 13px;
             }
 
             a {
