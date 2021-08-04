@@ -14,14 +14,17 @@
             @endif
             </h1>
             @if (count($post->tags) > 0)
-                <div class="text-center mb-5">
+                <div class="text-center mb-3">
                     @foreach ($post->tags as $tag)
                         <a href="{{ route('admin.posts.show', $post->id) }}" class="badge badge-pill btn-dark">{{ $tag->name }}</a>
                     @endforeach
                 </div>
             @endif
             <br>
-            <p>{{ $post->content }}</p>
+            <div class="d-flex justify-content-center align-items-center">
+                <img style="width: calc(45% - 80px); border-radius: 10px;" class="m-4" src="{{ asset('storage/' . $post->cover) }}" alt="{{ $post->title }}">
+                <p class="text-justify">{{ $post->content }}</p>
+            </div>
             <br>
             <div class="text-center">
                 <a class="btn btn-primary" href="{{ route('admin.posts.edit', $post->id) }}">Modifica Post</a>

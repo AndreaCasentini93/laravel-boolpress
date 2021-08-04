@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Storage;
+
 use App\Post;
 use App\Category;
 use App\Tag;
@@ -16,7 +18,8 @@ class PostController extends Controller
         'title' => 'required|max:255',
         'content' => 'required',
         'category_id' => 'nullable|exists:categories,id',
-        'tags' => 'exists:tags,id'
+        'tags' => 'exists:tags,id',
+        'cover' => 'nullable|mimes:jpg,jpeg,png,svg|max:2048'
     ];
     
     private $postValidationMessages = [
@@ -24,7 +27,9 @@ class PostController extends Controller
         'title.max' => 'Il titolo non può contenere più di 255 caratteri!',
         'content.required' => 'Il contenuto è un campo obbligatorio!',
         'category_id.exists' => 'La categoria scelta è inesistente!',
-        'tags.exists' => 'Il tag selezionato è inesistente!'
+        'tags.exists' => 'Il tag selezionato è inesistente!',
+        // 'cover.mimes' => '',
+        // 'cover.max' => '',
     ];
 
     private function generateSlug($data) {
@@ -73,7 +78,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        dd($data);
+        
         $request->validate(
             $this->postValidationArray,
             $this->postValidationMessages
@@ -81,6 +86,11 @@ class PostController extends Controller
 
         $post = new Post();
         $data = $this->generateSlug($data);
+
+        if (array_key_exists('cover', $data)) {
+            $data['cover'] = Storage::put('post_cover', $data['cover']);
+        }
+
         $post->fill($data);
         $post->save();
 

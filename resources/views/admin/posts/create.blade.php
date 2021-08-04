@@ -63,8 +63,11 @@
 
                 {{-- FILE --}}
                 <div class="form-group mb-3">
-                    <label for="exampleFormControlFile1">Inserisci un immagine</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    <label for="cover">Immagine di copertina</label>
+                    <input type="file" name="cover" id="cover" class="form-control-file">
+                    @error('cover')
+                        <small>{{ $message }}</small>
+                    @enderror
                 </div>
                 {{-- /FILE --}}
 
