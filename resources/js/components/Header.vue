@@ -15,6 +15,9 @@
                     <li :class="$route.name == 'about'? 'active':'' ">
                         <router-link :to="{ name: 'about' }">Chi Siamo</router-link>
                     </li>
+                    <li :class="$route.name == 'contact-us'? 'active':'' ">
+                        <router-link :to="{ name: 'contact-us' }">Contattaci</router-link>
+                    </li>
                 </ul>
             </nav>
         </div>
