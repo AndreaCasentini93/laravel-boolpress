@@ -115,7 +115,7 @@ export default {
             img {
                 display: block;
                 width: 100%;
-                max-height: 30%;
+                height: 30%;
                 border-radius: 5px;
             }
 

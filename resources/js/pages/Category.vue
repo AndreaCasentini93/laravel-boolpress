@@ -6,7 +6,7 @@
                 <div v-for="post in category.posts" :key="post.id" class="post-card">
                     <img :src="post.cover" :alt="post.title" class="mb-2">
                     <h4 class="mb-2">{{ post.title }}</h4>
-                    <p class="text-left">{{ post.excerpt }}</p>
+                    <p class="text-center">{{ post.excerpt }}</p>
                     <router-link :to="{ name: 'single-post', params: { slug: post.slug } }">Leggi</router-link>
                 </div>
             </div>
@@ -99,7 +99,8 @@ export default {
             img {
                 display: block;
                 width: 100%;
-                max-height: 30%;
+                height: 30%;
+                border-radius: 5px;
             }
 
             h4 {
