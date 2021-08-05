@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddCoverPostsTable extends Migration
+class CreateLeadsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class AddCoverPostsTable extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->string('cover')->nullable()->after('content');
+        Schema::create('leads', function (Blueprint $table) {
+            $table->id();
+            $table->string('name', 60);
+            $table->string('email', 60);
+            $table->text('message');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class AddCoverPostsTable extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->dropColumn('cover');
-        });
+        Schema::dropIfExists('leads');
     }
 }
