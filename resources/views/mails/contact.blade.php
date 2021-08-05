@@ -10,10 +10,18 @@
 </head>
 <body>
     <div class="container">
-        <h1>Hai ricevuto un nuovo messaggio!</h1>
-        <strong>Nome</strong>: {{ $lead->name }}
-        <strong>Email</strong>: {{ $lead->email }}
-        <strong>Messaggio</strong>:<br><p>{{ $lead->message }}</p>
+        <h1 class="text-center">Hai ricevuto un nuovo messaggio!</h1>
+        <div>
+            <strong class="text-primary">Nome</strong>: {{ $lead->name }}
+        </div>
+        <div>
+            <strong class="text-primary">Email</strong>: {{ $lead->email }}
+        </div>
+        <div>
+            <strong class="text-primary">Messaggio</strong>:
+            <br>
+            <p>{{ $lead->message }}</p>
+        </div>
     </div>
 </body>
 </html>
