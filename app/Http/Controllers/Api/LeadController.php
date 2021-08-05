@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
 
+use App\Mail\ContactMessage;
+use App\Lead;
+
 class LeadController extends Controller
 {
     // VALIDATION
@@ -37,6 +40,16 @@ class LeadController extends Controller
             );
         }
 
-        return response()->json($data);
+        $lead = new Lead();
+        $lead->fill($data);
+        $lead->save();
+
+        Mail::to('admin@sito.it')->send(new ContactMessage($lead));
+
+        return response()->json(
+            [
+                'success' => true
+            ]
+        );
     }
 }
