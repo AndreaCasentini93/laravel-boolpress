@@ -9,19 +9,48 @@
     <title>Email</title>
 </head>
 <body>
-    <div class="container">
-        <h1 class="text-center">Hai ricevuto un nuovo messaggio!</h1>
+    <div>
+        <h1>Hai ricevuto un nuovo messaggio!</h1>
         <div>
-            <strong class="text-primary">Nome</strong>: {{ $lead->name }}
+            <strong>Nome</strong>: {{ $lead->name }}
         </div>
         <div>
-            <strong class="text-primary">Email</strong>: {{ $lead->email }}
+            <strong>Email</strong>: {{ $lead->email }}
         </div>
+        <br>
         <div>
-            <strong class="text-primary">Messaggio</strong>:
-            <br>
-            <p>{{ $lead->message }}</p>
+            <strong>Messaggio</strong>:
+            <div class="message">{{ $lead->message }}</div>
         </div>
     </div>
 </body>
 </html>
+
+<style lang="scss">
+    body {
+        font-family: 'Roboto';
+        color: #3E444A;
+    }
+
+    h1 {
+        margin-bottom: 50px;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 20px;
+        color: #32373C;
+    }
+
+    strong {
+        font-size: 16px;
+        color: #32373C;
+    }
+
+    div {
+        font-size: 16px;
+    }
+
+    .message {
+        text-align: justify;
+        font-size: 14px;
+    }
+</style>

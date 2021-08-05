@@ -20,7 +20,7 @@
                     <small v-for="error, index in errors.message" :key="index">{{ error }}</small>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="d-flex align-items-center btn btn-warning mt-3" :disabled="sending">{{ !sending? 'Invia':'' }}<i :class="sending? 'fas fa-spinner':'' "></i></button>
+                    <button type="submit" class="d-flex align-items-center btn btn-warning mt-3" :disabled="sending">{{ sending? '':'Invia' }}<i :class="sending? 'fas fa-spinner':'' "></i></button>
                 </div>
             </form>
         </div>
@@ -42,7 +42,7 @@ export default {
     },
     methods: {
         sendMessage: function() {
-            this.sendign = true;
+            this.sending = true;
             axios
                 .post('http://127.0.0.1:8000/api/leads', {
                     name: this.name,
@@ -53,14 +53,14 @@ export default {
                     if (res.data.errors) {
                         this.errors = res.data.errors;
                         this.success = false;
-                        this.sendign = false;
+                        this.sending = false;
                     } else {
                         this.errors = {};
                         this.name = '';
                         this.email = '';
                         this.message = '';
                         this.success = true;
-                        this.sendign = false;
+                        this.sending = false;
                     }
                 })
                 .catch( err => {

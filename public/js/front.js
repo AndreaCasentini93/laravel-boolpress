@@ -2840,7 +2840,7 @@ __webpack_require__.r(__webpack_exports__);
     sendMessage: function sendMessage() {
       var _this = this;
 
-      this.sendign = true;
+      this.sending = true;
       axios.post('http://127.0.0.1:8000/api/leads', {
         name: this.name,
         email: this.email,
@@ -2849,14 +2849,14 @@ __webpack_require__.r(__webpack_exports__);
         if (res.data.errors) {
           _this.errors = res.data.errors;
           _this.success = false;
-          _this.sendign = false;
+          _this.sending = false;
         } else {
           _this.errors = {};
           _this.name = '';
           _this.email = '';
           _this.message = '';
           _this.success = true;
-          _this.sendign = false;
+          _this.sending = false;
         }
       })["catch"](function (err) {
         console.log(err);
@@ -5635,7 +5635,7 @@ var render = function() {
                 attrs: { type: "submit", disabled: _vm.sending }
               },
               [
-                _vm._v(_vm._s(!_vm.sending ? "Invia" : "")),
+                _vm._v(_vm._s(_vm.sending ? "" : "Invia")),
                 _c("i", { class: _vm.sending ? "fas fa-spinner" : "" })
               ]
             )
