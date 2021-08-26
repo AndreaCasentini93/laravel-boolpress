@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::namespace('Api')
     ->group (function () {
 
+        Route::get('token','PaymentController@generateToken');
+        Route::post('makepayment','PaymentController@makePayment');
         Route::get('posts', 'PostController@index');
         Route::get('categories', 'CategoryController@index');
         Route::get('posts/{slug}', 'PostController@show');
