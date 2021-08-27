@@ -21,7 +21,7 @@ class PaymentController extends Controller
         $data = [
             'token' => $token,
         ];
-        return response()->json($data);
+        return view ('admin.payments.braintree', compact('data'));
     }
 
     public function makePayment(PaymentRequest $paymentrequest) {

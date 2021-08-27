@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <!-- Braintree -->
+        <script src="https://js.braintreegateway.com/web/dropin/1.24.0/js/dropin.min.js"></script>
+
         <!-- Favicon -->
         <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
 
