@@ -9,7 +9,14 @@ use App\Http\Requests\PaymentRequest;
 
 class PaymentController extends Controller
 {
-    public function generateToken(Request $request, Gateway $gateway) {
+    public function generateToken(Request $request) {
+        $gateway = new \Braintree\Gateway([
+            'environment' => env('BRAINTREE_ENVIRONMENT'),
+            'merchantId' => env("BRAINTREE_MERCHANT_ID"),
+            'publicKey' => env("BRAINTREE_PUBLIC_KEY"),
+            'privateKey' => env("BRAINTREE_PRIVATE_KEY")
+        ]);
+
         $token = $gateway->clientToken()->generate();
         $data = [
             'token' => $token,
@@ -17,7 +24,14 @@ class PaymentController extends Controller
         return response()->json($data);
     }
 
-    public function makePayment(PaymentRequest $paymentrequest, Gateway $gateway) {
+    public function makePayment(PaymentRequest $paymentrequest) {
+        $gateway = new \Braintree\Gateway([
+            'environment' => env('BRAINTREE_ENVIRONMENT'),
+            'merchantId' => env("BRAINTREE_MERCHANT_ID"),
+            'publicKey' => env("BRAINTREE_PUBLIC_KEY"),
+            'privateKey' => env("BRAINTREE_PRIVATE_KEY")
+        ]);
+
         $result = $gateway->transaction()->sale([
             'amount' => $paymentrequest->amount,
             'paymentMethodNonce' => $paymentrequest->token,
