@@ -16,8 +16,6 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
-Route::get('admin/payments', 'Api\PaymentController@generateToken')->name('api.payments');
-
 Route::middleware('auth')
     ->namespace('Admin')
     ->name('admin.')
