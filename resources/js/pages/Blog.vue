@@ -53,7 +53,7 @@ export default {
         }
     },
     methods: {
-        truncateText: function(text, charsNumber = 100) {
+        truncateText: function(text, charsNumber = 70) {
             if (text.length > charsNumber) {
                 return text.substr(0, charsNumber)
             } else {
@@ -69,7 +69,7 @@ export default {
                     this.last_page = res.data.posts.last_page;
 
                     res.data.posts.data.forEach(post => {
-                        post.excerpt = this.truncateText(post.content, 100) + '...';
+                        post.excerpt = this.truncateText(post.content, 70) + '...';
                     });
 
                     this.loading = false;
